@@ -2,7 +2,7 @@
 
 An R package that will allow tooltips to show in Rmarkdown, Quarto documents and Shiny application when the uses hovers texts, inputs or buttons
 
-[](https://coursewhiz.org/mainsite/img/tooltips%20r.png){style="border:1px solid brown;padding:5px;"}
+[tooltip package](https://coursewhiz.org/mainsite/img/tooltips%20r.png)
 
 ## Progress
 
