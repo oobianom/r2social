@@ -23,6 +23,7 @@
 .social {
   position: fixed;
   top: 50px;
+  left: 15px;
 }
 .social a {
   text-decoration: none!important;
