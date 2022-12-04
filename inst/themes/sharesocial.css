@@ -1,19 +1,19 @@
 .social-btn {
-  display: flex;
-  width: 150px;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 30px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border: 1px;
-  border-bottom-right-radius: 30px;
-  border-top-right-radius: 30px;
-  margin-bottom: 5px;
-  position: relative;
-  left: -110px;
-  transition: left 1s;
+    display: flex;
+    width: 150px;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 5px;
+    padding-top: 6px;
+    padding-bottom: 2px;
+    border: 1px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: 5px;
+    position: relative;
+    left: -110px;
+    transition: left 1s;
 }
 .social-btn:hover {
   left: -20px;
@@ -66,13 +66,13 @@
 }
 
 
-.r2s-ico-fb{
+.r2s-ico-facebook{
   background-position: -21px -51px;
 }
-.r2s-ico-fbmsg{
+.r2s-ico-facebook-messenger{
   background-position: -76px -51px;
 }
-.r2s-ico-istagram{
+.r2s-ico-instagram{
   background-position: -132px -51px;
 }
 .r2s-ico-whatsapp{
