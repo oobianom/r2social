@@ -184,14 +184,31 @@ sharebuttons <- function(...,
 
 addscripts <- function() {
   ssp <- "r2resize"
-  vs <- "1.x"
+  vs <- "1.0"
   template.loc1 <- file.path(find.package(package = ssp), "themes")
-  htmltools::htmlDependency(
+  css <- "sharesocial.css"
+  js <- "sharesocial.js"
+
+  if(interactive()){
+    htmltools::htmlDependency(
     ssp, vs,
     src = template.loc1,
-    script = c("sharesocial.js"),
-    all_files = FALSE
+    script = js,
+    stylesheet  = css,
+    all_files = TRUE
   )
+  }else{
+    fetch.css <- readLines(file.path(template.loc1,css))
+    fetch.js <- readLines(file.path(template.loc1,js))
+
+    combine.css.js <- c(
+      shiny::tags$style(fetch.css),
+      shiny::tags$script(fetch.js)
+    )
+    rasterize.combo <- paste(combine.css.js,collapse = "")
+    rasterize.combo
+  }
+
 }
 
 
