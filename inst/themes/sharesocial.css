@@ -12,11 +12,11 @@
   border-top-right-radius: 30px;
   margin-bottom: 5px;
   position: relative;
-  left: -145px;
+  left: -110px;
   transition: left 1s;
 }
 .social-btn:hover {
-  left: -10px;
+  left: -20px;
   transition: left 1s;
 }
 
@@ -25,7 +25,7 @@
   top: 50px;
 }
 .social a {
-  text-decoration: none;
+  text-decoration: none!important;
 }
 
 .color-telegram {

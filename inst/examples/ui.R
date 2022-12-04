@@ -2,7 +2,8 @@ library(shiny)
 library(r2social)
 
 ui <- fluidPage(
-  addscripts(),
+  r2social.scripts(),
+  sharebuttons(),
   "Hello, world!"
 )
 

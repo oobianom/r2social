@@ -25,6 +25,10 @@ sharebuttons <- function(...,
                          bg.color = "black",
                          text.color = "black",
                          muisc = NULL) {
+
+  if(is.null(options()$r2socialscriptsincluded))
+    r2social.scripts()
+
   # fetch selected position
   position <- match.arg(position)
 
@@ -96,7 +100,7 @@ sharebuttons <- function(...,
         ),
         shiny::p(
           class = "order-1 google-font margin-telgram",
-          Telegram
+          "Telegram"
         )
       )
     ),
@@ -110,8 +114,8 @@ sharebuttons <- function(...,
           class = "icons8-instagram"
         ),
         shiny::p(
-          class = "order-1 google-font margin-telgram",
-          Telegram
+          class = "order-1 google-font margin-instagram",
+          "Insta"
         )
       )
     ),
@@ -126,7 +130,7 @@ sharebuttons <- function(...,
         ),
         shiny::p(
           class = "order-1 google-font margin-instagram",
-          Telegram
+          "Whatsapp"
         )
       )
     )
@@ -215,6 +219,9 @@ sharebuttons <- function(...,
 #'
 
 r2social.scripts <- function(name = "sharesocial") {
+  #if(is.null(options()$r2socialscriptsincluded)) return()
+  #options(r2socialscriptsincluded = TRUE)
+
   template.loc1 <- file.path(find.package(package = pkgn), "themes")
   css <- paste0(name, ".css")
   js <- paste0(name, ".js")
