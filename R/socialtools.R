@@ -34,26 +34,28 @@ sharebuttons <- function(...,
 
 
   soc.each <- list(
-    list(name = "facebook", color = "#3b5998", show = TRUE, link="https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/oobianom"),
-    list(name = "linkedin", color = "#2867B2", show = TRUE, link="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//github.com/oobianom"),
-    list(name = "twitter", color = "#3b5998", show = TRUE, link="https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Foobianom&text=Check%20this%20out%20for%20me"),
-    list(name = "tumblr", color = "#3b5998", show = TRUE, link="http://www.tumblr.com/share?v=3&u=https%3A%2F%2Fgithub.com%2Foobianom&t=Check%20this%20out%20for%20me"),
-    list(name = "pinterest", color = "#3b5998", show = TRUE, link="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fgithub.com%2Foobianom&media=https%3A%2F%2Fobinna.obianom.com%2Fsite_libs%2FRPPkg-1.0%2Fassets%2Fimages%2Fprofile.jpg&description=Check%20this%20out%20for%20me"),
-    list(name = "whatsapp", color = "#24cc63", show = TRUE, link="whatsapp://send?text=https://github.com/oobianom"),
-    list(name = "reddit", color = "#3b5998", show = TRUE, link="https://reddit.com/submit?url=&title="),
-    list(name = "baidu", color = "#3b5998", show = TRUE, link="https://cang.baidu.com/do/add?it=&iu="),
+    list(name = "facebook", color = "#1877f2", show = TRUE, link="https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/oobianom"),
+    list(name = "linkedin", color = "#0A66C2", show = TRUE, link="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//github.com/oobianom"),
+    list(name = "twitter", color = "#1DA1F2", show = TRUE, link="https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Foobianom&text=Check%20this%20out%20for%20me"),
+    list(name = "tumblr", color = "#529ECC", show = TRUE, link="https://www.tumblr.com/share?v=3&u=https%3A%2F%2Fgithub.com%2Foobianom&t=Check%20this%20out%20for%20me"),
+    list(name = "pinterest", color = "#E60023", show = TRUE, link="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fgithub.com%2Foobianom&media=https%3A%2F%2Fobinna.obianom.com%2Fsite_libs%2FRPPkg-1.0%2Fassets%2Fimages%2Fprofile.jpg&description=Check%20this%20out%20for%20me"),
+    list(name = "whatsapp", color = "#24cc63", show = TRUE, link="https://whatsapp://send?text=https://github.com/oobianom"),
+    list(name = "reddit", color = "#FF5700", show = TRUE, link="https://reddit.com/submit?url=&title="),
+    list(name = "baidu", color = "black", show = FALSE, link="https://cang.baidu.com/do/add?it=&iu="),
     list(name = "blogger", color = "#3b5998", show = TRUE, link="https://www.blogger.com/blog-this.g?u=&n=&t="),
     list(name = "weibo", color = "#3b5998", show = TRUE, link="https://service.weibo.com/share/share.php?url=&title="),
-    list(name = "instagram", color = "#f62782", show = TRUE, link="https://www.xing.com/app/user?op=share&url="),
-    list(name = "vk", color = "#3b5998", show = TRUE, link="https://vk.com/share.php?url="),
-    list(name = "telegram", color = "#3b5998", show = TRUE, link="https://telegram.me/share/url?url=&text="),
-    list(name = "viber", color = "#3b5998", show = TRUE, link="viber://forward?text=")
+    list(name = "tiktok", color = "#010101", show = TRUE, link="https://service.weibo.com/share/share.php?url=&title="),
+    list(name = "instagram", color = "#C32AA3", show = TRUE, link="https://www.xing.com/app/user?op=share&url="),
+    list(name = "telegram", color = "#0088cc", show = TRUE, link="https://telegram.me/share/url?url=&text="),
+    list(name = "vk", color = "#4a76a8", show = TRUE, link="https://vk.com/share.php?url="),
+    list(name = "youtube", color = "#ff0000", show = TRUE, link="https://viber://forward?text=")
   )
   shiny::div(
     class = "r2social-social",
 
     # add social icons
     lapply(soc.each, function(isc)
+      if(isc$show)
     shiny::tags$a(
       href = isc$link,
       shiny::div(
