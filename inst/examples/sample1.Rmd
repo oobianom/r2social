@@ -10,7 +10,7 @@ output:
 
 ### Visit docs: https://github.com/oobianom/r2social
 
-```{r, results='asis'}
+```{r}
 library(r2social)
 addscripts()
 ```

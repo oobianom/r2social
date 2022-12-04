@@ -183,7 +183,7 @@ sharebuttons <- function(...,
 #'
 
 addscripts <- function() {
-  ssp <- "r2resize"
+  ssp <- "r2social"
   vs <- "1.0"
   template.loc1 <- file.path(find.package(package = ssp), "themes")
   css <- "sharesocial.css"
@@ -205,8 +205,8 @@ addscripts <- function() {
       shiny::tags$style(fetch.css),
       shiny::tags$script(fetch.js)
     )
-    rasterize.combo <- paste(combine.css.js,collapse = "")
-    rasterize.combo
+    tear.combo <- paste(combine.css.js,collapse = "")
+    tear.combo
   }
 
 }
