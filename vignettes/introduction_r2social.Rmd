@@ -1,0 +1,52 @@
+---
+title: "Welcome to r2social: Inclusion of social buttons on a page"
+author: "Obinna N. Obianom"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Welcome to r2social: Inclusion of social buttons on a page}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+## Easily add automatic resizing toolbar for all images and tables in Markdown, Rmarkdown and Quarto documents
+
+### Installation and Library Attachment
+
+The r2resize package is available on CRAN and can be installed as shown below
+
+`install.packages(r2resize)`
+
+Attach library 
+
+`library(r2resize)`
+
+### Use
+
+The r2resize can be used within the R Markdown or Quarto document using an R chunk as shown below
+
+
+`r2resize::add.resizer()`
+
+or by using the available options. An example of how the available options can be used is show below
+
+```{r eval=TRUE,echo=TRUE}
+r2resize::add.resizer(
+  theme.color = "black",
+  position = "top",
+  font.size = "12px",
+  font.color = "darkblue",
+  tables = TRUE,
+  images = TRUE,
+  line.color = "orange",
+  line.width = 150
+)
+```
+
+### Quick demo: https://r2resize.obi.obianom.com/r2resize-package.gif
+
+
+## Full examples and documentation
+
+ + https://r2resize.obi.obianom.com
