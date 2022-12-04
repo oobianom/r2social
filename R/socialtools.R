@@ -50,7 +50,7 @@ sharebuttons <- function(...,
     list(name = "viber", show = TRUE, link="viber://forward?text=")
   )
   shiny::div(
-    class = "social",
+    class = "r2social-social",
 
     # add social icons
     for(isc in soc.each)
@@ -137,20 +137,4 @@ scr.elm <- c("style", "script", "html")
 pkgn <- "r2social"
 vers <- "1.0"
 
-
-
-#facebook: https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/oobianom
-#linkedin: https://www.linkedin.com/shareArticle?mini=true&url=https%3A//github.com/oobianom
-#twitter:https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Foobianom&text=Check%20this%20out%20for%20me
-#tumblr: http://www.tumblr.com/share?v=3&u=https%3A%2F%2Fgithub.com%2Foobianom&t=Check%20this%20out%20for%20me
-#pinterest: http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fgithub.com%2Foobianom&media=https%3A%2F%2Fobinna.obianom.com%2Fsite_libs%2FRPPkg-1.0%2Fassets%2Fimages%2Fprofile.jpg&description=Check%20this%20out%20for%20me
-#whatsapp: whatsapp://send?text=https://github.com/oobianom
-#reddit: https://reddit.com/submit?url=&title=
-#baidu: https://cang.baidu.com/do/add?it=&iu=
-#blogger:https://www.blogger.com/blog-this.g?u=&n=&t=
-#weibo: https://service.weibo.com/share/share.php?url=&title=
-#xing: https://www.xing.com/app/user?op=share&url=
-#vk: https://vk.com/share.php?url=
-#telegram: https://telegram.me/share/url?url=&text=
-#viber: viber://forward?text=
 

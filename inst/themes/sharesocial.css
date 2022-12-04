@@ -20,12 +20,12 @@
   transition: left 1s;
 }
 
-.social {
+.r2social-social {
   position: fixed;
   top: 50px;
   left: 15px;
 }
-.social a {
+.r2social-social a {
   text-decoration: none!important;
 }
 
