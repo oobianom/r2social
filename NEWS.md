@@ -1,13 +1,7 @@
-# r2resize 1.3
+# r2social 1.0
 
 ## Features
 
-  + Resizable split screen container
-
-# r2resize 1.2
-
-## Features
-
-  + Image and table resizing toolbar
+  + Social buttons
   
-  + User enabled font-family and font-size change
+  + Two styles
