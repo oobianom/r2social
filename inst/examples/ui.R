@@ -3,7 +3,7 @@ library(r2social)
 
 ui <- fluidPage(
   r2social.scripts(),
-  sharebuttons(),
+  shareButton(),
   "Hello, world!"
 )
 

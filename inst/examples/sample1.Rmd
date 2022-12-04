@@ -18,4 +18,4 @@ r2social.scripts()
 Hellow
 
 `r r2social.scripts()`
-`r sharebuttons()`
+`r sharebutton()`
