@@ -16,3 +16,5 @@ addscripts()
 ```
 
 Hellow
+
+`r addscripts()`

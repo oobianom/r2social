@@ -198,14 +198,17 @@ addscripts <- function() {
     all_files = TRUE
   )
   }else{
-    fetch.css <- readLines(file.path(template.loc1,css))
-    fetch.js <- readLines(file.path(template.loc1,js))
+    fetch.css <- paste(readLines(file.path(template.loc1,css)),collapse = "")
+    fetch.js <- paste(readLines(file.path(template.loc1,js)),collapse = "")
 
     combine.css.js <- c(
       shiny::tags$style(fetch.css),
       shiny::tags$script(fetch.js)
     )
     tear.combo <- paste(combine.css.js,collapse = "")
+    # set to html
+    attr(tear.combo, "html") <- TRUE
+    class(tear.combo) <- c("html", "character")
     tear.combo
   }
 
