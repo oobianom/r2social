@@ -32,7 +32,7 @@ Highly customizable social buttons for the pages
 \section{Examples for r2social}{
 
 More examples and demo pages are located at this link -
-\url{https://rpkg.net/package/r2resize}.
+\url{https://rpkg.net/package/r2social}.
 }
 
 \examples{

@@ -174,3 +174,24 @@ sharebuttons <- function(...,
 }
 
 
+#' Add scripts
+#'
+#'
+#'
+#' @export
+#'
+#'
+
+addscripts <- function() {
+  ssp <- "r2resize"
+  vs <- "1.x"
+  template.loc1 <- file.path(find.package(package = ssp), "themes")
+  htmltools::htmlDependency(
+    ssp, vs,
+    src = template.loc1,
+    script = c("sharesocial.js"),
+    all_files = FALSE
+  )
+}
+
+
