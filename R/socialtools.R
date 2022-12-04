@@ -33,50 +33,37 @@ sharebuttons <- function(...,
   position <- match.arg(position)
 
 
+  soc.each <- list(
+    list(name = "facebook", show = TRUE, link="https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/oobianom"),
+    list(name = "linkedin", show = TRUE, link="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//github.com/oobianom"),
+    list(name = "twitter", show = TRUE, link="https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Foobianom&text=Check%20this%20out%20for%20me"),
+    list(name = "tumblr", show = TRUE, link="http://www.tumblr.com/share?v=3&u=https%3A%2F%2Fgithub.com%2Foobianom&t=Check%20this%20out%20for%20me"),
+    list(name = "pinterest", show = TRUE, link="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fgithub.com%2Foobianom&media=https%3A%2F%2Fobinna.obianom.com%2Fsite_libs%2FRPPkg-1.0%2Fassets%2Fimages%2Fprofile.jpg&description=Check%20this%20out%20for%20me"),
+    list(name = "whatsapp", show = TRUE, link="whatsapp://send?text=https://github.com/oobianom"),
+    list(name = "reddit", show = TRUE, link="https://reddit.com/submit?url=&title="),
+    list(name = "baidu", show = TRUE, link="https://cang.baidu.com/do/add?it=&iu="),
+    list(name = "blogger", show = TRUE, link="https://www.blogger.com/blog-this.g?u=&n=&t="),
+    list(name = "weibo", show = TRUE, link="https://service.weibo.com/share/share.php?url=&title="),
+    list(name = "xing", show = TRUE, link="https://www.xing.com/app/user?op=share&url="),
+    list(name = "vk", show = TRUE, link="https://vk.com/share.php?url="),
+    list(name = "telegram", show = TRUE, link="https://telegram.me/share/url?url=&text="),
+    list(name = "viber", show = TRUE, link="viber://forward?text=")
+  )
   shiny::div(
     class = "social",
 
-    # telegram
+    # add social icons
+    for(isc in soc.each)
     shiny::tags$a(
-      href = "#",
+      href = isc$link,
       shiny::div(
         class = "social-btn color-telegram",
         shiny::div(
-          class = "icons8-telegram-app"
+          class = paste0("r2social-icons1 r2s-ico-",isc$name)
         ),
         shiny::p(
           class = "order-1 google-font margin-telgram",
-          "Telegram"
-        )
-      )
-    ),
-
-    # facebook
-    shiny::tags$a(
-      href = "#",
-      shiny::div(
-        class = "social-btn color-instagram",
-        shiny::div(
-          class = "icons8-instagram"
-        ),
-        shiny::p(
-          class = "order-1 google-font margin-instagram",
-          "Insta"
-        )
-      )
-    ),
-
-    # instagram
-    shiny::tags$a(
-      href = "#",
-      shiny::div(
-        class = "social-btn color-whatsapp",
-        shiny::div(
-          class = "icons8-whatsapp"
-        ),
-        shiny::p(
-          class = "order-1 google-font margin-instagram",
-          "Whatsapp"
+          isc$name
         )
       )
     )
