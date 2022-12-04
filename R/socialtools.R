@@ -32,60 +32,6 @@ sharebuttons <- function(...,
   # fetch selected position
   position <- match.arg(position)
 
-  # # preset
-  # if (is.null(border.color)) border.color <- "#ffffff"
-  # uniquenum <-
-  #   substring(round(as.numeric(Sys.time()) * sample(7:78, 1)), 5)
-  #
-  # # set splitter classes
-  # switch(position,
-  #   vertical = {
-  #     class.0 <- paste0("container", uniquenum)
-  #     class.a <- paste0("left", uniquenum)
-  #     class.b <- paste0("splitter", uniquenum)
-  #     class.c <- paste0("right", uniquenum)
-  #     class.d <- paste0("Height", uniquenum)
-  #   },
-  #   horizontal = {
-  #     class.0 <- paste0("container-horizontal", uniquenum)
-  #     class.a <- paste0("top", uniquenum)
-  #     class.b <- paste0("splitter-horizontal", uniquenum)
-  #     class.c <- paste0("bottom", uniquenum)
-  #     class.d <- paste0("Width", uniquenum)
-  #   }
-  # )
-
-
-  # shiny::div(shiny::div(
-  #   class = holders,
-  #   shiny::div(
-  #     class = panel.a,
-  #     style = paste0(bgcol, bg.left.color, ";"),
-  #     style = ifelse(is.null(left.bg.url), "", paste0(bgurl, left.bg.url, ");")),
-  #     style = ifelse(
-  #       is.null(text.left.color),
-  #       "",
-  #       paste0(textcol, text.left.color, ";")
-  #     ),
-  #     left
-  #   ),
-  #   shiny::div(class = splitters,
-  #              style = paste0(bgcol, splitter.color)),
-  #   shiny::div(
-  #     class = panel.b,
-  #     style = paste0(bgcol, bg.right.color, ";"),
-  #     style = ifelse(is.null(right.bg.url), "", paste0(bgurl, right.bg.url, ");")),
-  #     style = ifelse(
-  #       is.null(text.right.color),
-  #       "",
-  #       paste0(textcol, text.right.color, ";")
-  #     ),
-  #     right
-  #   )
-  # ),
-  # cssjs)
-
-
 
   shiny::div(
     class = "social",
@@ -138,62 +84,6 @@ sharebuttons <- function(...,
 
 
 
-  # <div class="share-buttons">
-  #   <div class="share-button">
-  #   <div class="share-button-secondary">
-  #   <div class="share-button-secondary-content">
-  #   share on twitter
-  # </div>
-  #   </div>
-  #   <div class="share-button-primary">
-  #   <i class="share-button-icon fa fa-twitter"></i>
-  #   </div>
-  #   </div>
-  #
-  #   <div class="share-button">
-  #   <div class="share-button-secondary">
-  #   <div class="share-button-secondary-content">
-  #   share on facebook
-  # </div>
-  #   </div>
-  #   <div class="share-button-primary">
-  #   <i class="share-button-icon fa fa-facebook"></i>
-  #   </div>
-  #   </div>
-  #
-  #   <div class="share-button">
-  #   <div class="share-button-secondary">
-  #   <div class="share-button-secondary-content">
-  #   pin on pinterest
-  # </div>
-  #   </div>
-  #   <div class="share-button-primary">
-  #   <i class="share-button-icon fa fa-pinterest"></i>
-  #   </div>
-  #   </div>
-  #
-  #   <div class="share-button">
-  #   <div class="share-button-secondary">
-  #   <div class="share-button-secondary-content">
-  #   share on tumblr
-  # </div>
-  #   </div>
-  #   <div class="share-button-primary">
-  #   <i class="share-button-icon fa fa-tumblr"></i>
-  #   </div>
-  #   </div>
-  #
-  #   <div class="share-button">
-  #   <div class="share-button-secondary">
-  #   <div class="share-button-secondary-content">
-  #   share on google+
-  #   </div>
-  #   </div>
-  #   <div class="share-button-primary">
-  #   <i class="share-button-icon fa fa-google-plus"></i>
-  #   </div>
-  #   </div>
-  #   </div>
 }
 
 
