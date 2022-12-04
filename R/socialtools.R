@@ -21,71 +21,37 @@
 #' @export
 
 sharebuttons <- function(...,
-                      position = c("vertical", "horizontal"),
-                      bg.color = "black",
-                      text.color = "black",
-                      muisc = NULL) {
+                         position = c("vertical", "horizontal"),
+                         bg.color = "black",
+                         text.color = "black",
+                         muisc = NULL) {
   # fetch selected position
   position <- match.arg(position)
 
-  # preset
-  if(is.null(border.color)) border.color <- "#ffffff"
-  uniquenum <-
-    substring(round(as.numeric(Sys.time()) * sample(7:78, 1)), 5)
-
-  # set splitter classes
-  switch(position,
-         vertical = {
-           class.0 <- paste0("container",uniquenum)
-           class.a <- paste0("left",uniquenum)
-           class.b <- paste0("splitter",uniquenum)
-           class.c <- paste0("right",uniquenum)
-           class.d <- paste0("Height",uniquenum)
-         },
-         horizontal = {
-           class.0 <- paste0("container-horizontal",uniquenum)
-           class.a <- paste0("top",uniquenum)
-           class.b <- paste0("splitter-horizontal",uniquenum)
-           class.c <- paste0("bottom",uniquenum)
-           class.d <- paste0("Width",uniquenum)
-         })
-
-  holders <- paste0("r2resize-resizablediv-panel-", class.0)
-  panel.a <- paste0("r2resize-resizablediv-panel-", class.a)
-  splitters <- paste0("r2resize-resizablediv-", class.b)
-  panel.b <- paste0("r2resize-resizablediv-panel-", class.c)
-
-  # fetch css
-  css <- ""
-  theme.02.css <- paste0(template.loc(), "/sharesocial.css")
-  if (file.exists(theme.02.css)) {
-    css <- c(css, "<style>", readLines(theme.02.css), "</style>")
-    css <- gsub("sib53lver", border.color, css)
-    css <- paste(css, collapse = "")
-  }
+  # # preset
+  # if (is.null(border.color)) border.color <- "#ffffff"
+  # uniquenum <-
+  #   substring(round(as.numeric(Sys.time()) * sample(7:78, 1)), 5)
+  #
+  # # set splitter classes
+  # switch(position,
+  #   vertical = {
+  #     class.0 <- paste0("container", uniquenum)
+  #     class.a <- paste0("left", uniquenum)
+  #     class.b <- paste0("splitter", uniquenum)
+  #     class.c <- paste0("right", uniquenum)
+  #     class.d <- paste0("Height", uniquenum)
+  #   },
+  #   horizontal = {
+  #     class.0 <- paste0("container-horizontal", uniquenum)
+  #     class.a <- paste0("top", uniquenum)
+  #     class.b <- paste0("splitter-horizontal", uniquenum)
+  #     class.c <- paste0("bottom", uniquenum)
+  #     class.d <- paste0("Width", uniquenum)
+  #   }
+  # )
 
 
-  # script fetch js
-  theme.02.js <- paste0(template.loc(), "/sharesocial.js")
-  script <- ""
-  if (file.exists(theme.02.js)) {
-    script <-
-      paste(c("<script>", readLines(theme.02.js), "</script>"), collapse = " ")
-    script <- gsub("resizepanelwhich", panel.a, script)
-    script <- gsub("resizesplitterwhich", splitters, script)
-    script <- gsub("HeWigdht", class.d, script)
-  }
-  # combine stylesheets and scripts
-  cssjs <- paste0(css, script)
-  cssjs <- gsub("87n767m08o", uniquenum, cssjs)
-  # set to html
-  attr(cssjs, "html") <- TRUE
-  class(cssjs) <- c("html", "character")
-
-  # set initial content
-  bgcol <- "background-color:"
-  bgurl <- "background-image:url("
-  textcol <- "color:"
   # shiny::div(shiny::div(
   #   class = holders,
   #   shiny::div(
@@ -114,6 +80,59 @@ sharebuttons <- function(...,
   #   )
   # ),
   # cssjs)
+
+
+
+  shiny::div(
+    class = "social",
+
+    # telegram
+    shiny::tags$a(
+      href = "#",
+      shiny::div(
+        class = "social-btn color-telegram",
+        shiny::div(
+          class = "icons8-telegram-app"
+        ),
+        shiny::p(
+          class = "order-1 google-font margin-telgram",
+          Telegram
+        )
+      )
+    ),
+
+    # facebook
+    shiny::tags$a(
+      href = "#",
+      shiny::div(
+        class = "social-btn color-instagram",
+        shiny::div(
+          class = "icons8-instagram"
+        ),
+        shiny::p(
+          class = "order-1 google-font margin-telgram",
+          Telegram
+        )
+      )
+    ),
+
+    # instagram
+    shiny::tags$a(
+      href = "#",
+      shiny::div(
+        class = "social-btn color-whatsapp",
+        shiny::div(
+          class = "icons8-whatsapp"
+        ),
+        shiny::p(
+          class = "order-1 google-font margin-instagram",
+          Telegram
+        )
+      )
+    )
+  )
+
+
 
   # <div class="share-buttons">
   #   <div class="share-button">
@@ -174,44 +193,62 @@ sharebuttons <- function(...,
 }
 
 
-#' Add scripts
+
+
+
+#' Add r2social scripts
 #'
+#' Wrap functions needed for styling of the containers
 #'
+#' @param name script file name
+#'
+#' @return scripts needed for styling
+#'
+#' @examples
+#'
+#' if (interactive()) {
+#'   r2social.scripts()
+#' }
 #'
 #' @export
 #'
 #'
 
-addscripts <- function() {
-  ssp <- "r2social"
-  vs <- "1.0"
-  template.loc1 <- file.path(find.package(package = ssp), "themes")
-  css <- "sharesocial.css"
-  js <- "sharesocial.js"
+r2social.scripts <- function(name = "sharesocial") {
+  template.loc1 <- file.path(find.package(package = pkgn), "themes")
+  css <- paste0(name, ".css")
+  js <- paste0(name, ".js")
 
-  if(interactive()){
+  if (interactive()) {
+    # include scripts
     htmltools::htmlDependency(
-    ssp, vs,
-    src = template.loc1,
-    script = js,
-    stylesheet  = css,
-    all_files = TRUE
-  )
-  }else{
-    fetch.css <- paste(readLines(file.path(template.loc1,css)),collapse = "")
-    fetch.js <- paste(readLines(file.path(template.loc1,js)),collapse = "")
-
-    combine.css.js <- c(
-      shiny::tags$style(fetch.css),
-      shiny::tags$script(fetch.js)
+      pkgn, vers,
+      src = template.loc1,
+      script = js,
+      stylesheet = css,
+      all_files = TRUE
     )
-    tear.combo <- paste(combine.css.js,collapse = "")
-    # set to html
-    attr(tear.combo, "html") <- TRUE
-    class(tear.combo) <- c("html", "character")
-    tear.combo
-  }
+  } else {
+    # fetch scripts
+    fetch.css <- readLines(file.path(template.loc1, css))
+    fetch.js <- readLines(file.path(template.loc1, js))
 
+    # combine scripts
+    combine.css.js <- c(
+      "<", scr.elm[1], ">", fetch.css, "</", scr.elm[1], ">",
+      "<", scr.elm[2], ">", fetch.js, "</", scr.elm[2], ">"
+    )
+
+    # collapse and set to html
+    tear.combo <- paste(combine.css.js, collapse = "")
+    # set to html
+    attr(tear.combo, scr.elm[3]) <- TRUE
+    class(tear.combo) <- c(scr.elm[4], "character")
+    # display html
+    return(tear.combo)
+  }
 }
 
-
+scr.elm <- c("style", "script", "html")
+pkgn <- "r2social"
+vers <- "1.0"

@@ -10,11 +10,12 @@ output:
 
 ### Visit docs: https://github.com/oobianom/r2social
 
-```{r}
+```{r, results='asis'}
 library(r2social)
-addscripts()
+r2social.scripts()
 ```
 
 Hellow
 
-`r addscripts()`
+`r r2social.scripts()`
+`r sharebuttons()`
