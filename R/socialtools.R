@@ -53,7 +53,7 @@ sharebuttons <- function(...,
     class = "r2social-social",
 
     # add social icons
-    for(isc in soc.each)
+    lapply(soc.each, function(isc)
     shiny::tags$a(
       href = isc$link,
       shiny::div(
@@ -66,7 +66,7 @@ sharebuttons <- function(...,
           isc$name
         )
       )
-    )
+    ))
   )
 
 
