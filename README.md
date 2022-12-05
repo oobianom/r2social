@@ -1,5 +1,9 @@
 # r2social R package: social links and buttons for markdown and shiny applications
 
+[![CRAN\_Status\_Badge](https://img.shields.io/badge/rPkgNet-not_published-red)](https://rnetwork.obi.obianom.com/package/r2social) [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/r2social)](https://cran.r-project.org/package=r2social) [![](https://cranlogs.r-pkg.org/badges/r2social)](https://cran.r-project.org/package=r2social)
+[![](https://cranlogs.r-pkg.org/badges/last-week/r2social)](https://cran.r-project.org/package=r2social)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/r2social)](https://cran.r-project.org/package=r2social)
+
 under development...
 
 ```{r}
