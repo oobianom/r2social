@@ -37,7 +37,7 @@
 shareButton <- function(link,
                         image = NULL,
                         text = NULL,
-                        position = c("left", "right", "bottom", "inline"),
+                        position = c("left", "right", "inline"),
                         text.color = "black",
                         facebook = TRUE,
                         linkedin = TRUE,
@@ -87,10 +87,10 @@ shareButton <- function(link,
         shiny::tags$a(
           href = isc$link,
           shiny::div(
-            class = "social-btn color-telegram",
+            class = paste0("social-btn-",position),
             style = paste0("background-color:", isc$color),
             shiny::div(
-              class = paste0("r2social-icons1 r2s-ico-", isc$name)
+              class = paste0("r2social-icons-",position," r2s-ico-", isc$name)
             ),
             shiny::p(
               class = "order-1 google-font margin-telgram",

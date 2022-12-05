@@ -1,23 +1,44 @@
-.social-btn {
-    display: flex;
-    width: 150px;
-    align-items: center;
-    justify-content: space-between;
+.social-btn-left {
     padding-left: 30px;
     padding-right: 5px;
     padding-top: 6px;
-    padding-bottom: 2px;
-    border: 1px;
+    padding-bottom: 5px;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
     margin-bottom: 5px;
-    position: relative;
     left: -110px;
     transition: left 1s;
 }
-.social-btn:hover {
+
+.social-btn-right {
+    padding-left: 5px;
+    padding-right: 30px;
+    padding-top: 6px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    margin-bottom: 5px;
+    right: 110px;
+}
+
+.social-btn-right, .social-btn-left{
+  display: flex;
+    width: 150px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border: 1px;
+    transition: left 1s;
+    color: #fff;
+}
+.social-btn-left:hover {
   left: -20px;
   transition: left 1s;
+}
+
+.social-btn-right:hover {
+  right: 190px;
+  transition: right 1s;
 }
 
 .r2social-social-left {
@@ -50,11 +71,11 @@
   font-size: 1.25rem;
 }
 
-.social-btn img {
+.social-btn-left img, .social-btn-right img {
   width: 40px;
 }
 
-.social-btn p {
+.social-btn-left p, .social-btn-right p {
   color: white;
 
   margin-top: 0px;
