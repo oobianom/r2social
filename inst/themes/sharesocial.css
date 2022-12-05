@@ -13,7 +13,9 @@ body{
     left: -110px;
     transition: left 1s;
 }
-
+.r2social-social-inline{
+  display: flex;
+}
 .social-btn-right {
     padding-left: 5px;
     padding-right: 30px;
@@ -23,6 +25,15 @@ body{
     border-top-left-radius: 20px;
     margin-bottom: 5px;
     right: 110px;
+}
+.social-btn-inline {
+    padding: 0px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.r2social-social-inline p{
+    display: none!important;
 }
 
 .social-btn-right, .social-btn-left{
@@ -44,14 +55,16 @@ body{
   right: 190px;
   transition: right 1s;
 }
-
+.r2social-icons-inline:hover {
+  background-color:yellow;
+}
 .r2social-social-left {
   position: fixed;
   top: 50px;
   left: 15px;
     z-index: 999!important;
 }
-.r2social-social-left a, .r2social-social-right a {
+.r2social-social-left a, .r2social-social-left a, .r2social-social-inline a {
   text-decoration: none!important;
 }
 
@@ -92,7 +105,7 @@ body{
   order: 2;
 }
 
-.r2social-icons-left, .r2social-icons-right {
+.r2social-icons-left, .r2social-icons-right, .r2social-icons-inline {
   display: inline-block;
   width: 38px;
   height: 38px;

@@ -7,6 +7,7 @@ ui <- fluidPage(
   verbatimTextOutput("summary"),
   tableOutput("table"),
   r2social.scripts(),
-  shareButton(position = "left"),
-  shareButton(position = "inline")
+  shareButton(link = "http://obianom.com", position = "left"),
+  shareButton(link = "http://obianom.com", position = "right"),
+  shareButton(link = "http://google.com", position = "inline")
 )

@@ -10,11 +10,11 @@ library(r2social)
 
 ui <- fluidPage(
   r2social.scripts(),
-  shareButton(position = "left"),
-  shareButton(position = "right")
+  shareButton(link = "https://rpkg.net", position = "left"),
+  shareButton(link = "https://obianom.com", position = "right")
 )
 
 
 ```
 
-![](https://r2tooltip.obi.obianom.com/r2social.gif)
+![](https://r2social.obi.obianom.com/r2social2.gif)

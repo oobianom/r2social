@@ -64,6 +64,9 @@ socialButtons <- function(link,
   position <- match.arg(position)
   type <- match.arg(type)
 
+  # encode link
+  link = URLencode(link)
+
   # social links
   soc.each <- list(
     list(name = "facebook", color = "#1877f2", show = facebook, link = "https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/oobianom"),
@@ -71,7 +74,7 @@ socialButtons <- function(link,
     list(name = "twitter", color = "#1DA1F2", show = twitter, link = "https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Foobianom&text=Check%20this%20out%20for%20me"),
     list(name = "tumblr", color = "#529ECC", show = tumblr, link = "https://www.tumblr.com/share?v=3&u=https%3A%2F%2Fgithub.com%2Foobianom&t=Check%20this%20out%20for%20me"),
     list(name = "pinterest", color = "#E60023", show = pinterest, link = "https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fgithub.com%2Foobianom&media=https%3A%2F%2Fobinna.obianom.com%2Fsite_libs%2FRPPkg-1.0%2Fassets%2Fimages%2Fprofile.jpg&description=Check%20this%20out%20for%20me"),
-    list(name = "whatsapp", color = "#24cc63", show = whatsapp, link = "https://whatsapp://send?text=https://github.com/oobianom"),
+    list(name = "whatsapp", color = "#24cc63", show = whatsapp, link = "https://web.whatsapp.com/send?text=www.google.com"),
     list(name = "reddit", color = "#FF5700", show = reddit, link = "https://reddit.com/submit?url=&title="),
     list(name = "baidu", color = "black", show = FALSE, link = "https://cang.baidu.com/do/add?it=&iu="),
     list(name = "blogger", color = "#fc4f08", show = blogger, link = "https://www.blogger.com/blog-this.g?u=&n=&t="),
@@ -84,7 +87,6 @@ socialButtons <- function(link,
   )
   shiny::div(
     class = paste0("r2social-link-container r2social-social-",position),
-    style = paste0("color:", text.color),
 
     # add social icons
     lapply(soc.each, function(isc) {
@@ -100,6 +102,7 @@ socialButtons <- function(link,
             ),
             shiny::p(
               class = "order-1 google-font margin-telgram",
+              style = paste0("color:", text.color),
               isc$name
             )
           )
