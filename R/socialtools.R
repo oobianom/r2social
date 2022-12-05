@@ -30,7 +30,7 @@
 #'
 #' @examples
 #'
-#' sharebuttons()
+#' shareButton()
 #'
 #' @export
 
@@ -79,7 +79,7 @@ shareButton <- function(link,
     list(name = "youtube", color = "#ff0000", show = youtube, link = "https://viber://forward?text=")
   )
   shiny::div(
-    class = "r2social-social",
+    class = paste0("r2social-social-",position),
 
     # add social icons
     lapply(soc.each, function(isc) {

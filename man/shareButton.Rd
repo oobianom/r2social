@@ -77,6 +77,6 @@ More examples and demo pages are located at this link -
 
 \examples{
 
-sharebuttons()
+shareButton()
 
 }

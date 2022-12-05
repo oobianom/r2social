@@ -20,13 +20,19 @@
   transition: left 1s;
 }
 
-.r2social-social {
+.r2social-social-left {
   position: fixed;
   top: 50px;
   left: 15px;
 }
-.r2social-social a {
+.r2social-social-left a, .r2social-social-right a {
   text-decoration: none!important;
+}
+
+.r2social-social-right {
+    position: fixed;
+    top: 50px;
+    right: -215px;
 }
 
 .color-telegram {
@@ -55,9 +61,11 @@
   margin-bottom: 0px;
 }
 
-
-.r2social-icons1 {
+.r2social-icons-left{
   order: 2;
+}
+
+.r2social-icons-left, .r2social-icons-right {
   display: inline-block;
   width: 38px;
   height: 38px;
