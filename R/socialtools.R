@@ -1,10 +1,11 @@
-#' Add social buttons to share a page
+#' Customizable social icons
 #'
-#' Customize social buttons available for sharing of pages
+#' For use in making buttons to share a page or connect to your social media
 #'
-#' @param link,
-#' @param image = NULL,
-#' @param text = NULL,
+#' @param link link address to share
+#' @param type type of social button e.g. share or connect
+#' @param image image link for pinterest only
+#' @param text text link for twitter only
 #' @param position = c("left","right","bottom","inline"),
 #' @param text.color = "black",
 #' @param facebook share on Facebook
@@ -30,37 +31,40 @@
 #'
 #' @examples
 #'
-#' shareButton()
+#' socialButtons("https://66pharm.com")
 #'
 #' @export
 
-shareButton <- function(link,
+socialButtons <- function(link,
+                          type = c("share","connect"),
                         image = NULL,
                         text = NULL,
                         position = c("left", "right", "inline"),
-                        text.color = "black",
-                        facebook = TRUE,
-                        linkedin = TRUE,
-                        twitter = TRUE,
-                        tumblr = TRUE,
-                        pinterest = TRUE,
-                        whatsapp = TRUE,
-                        reddit = TRUE,
-                        instagram = TRUE,
-                        blogger = TRUE,
-                        weibo = TRUE,
-                        tiktok = TRUE,
-                        vk = TRUE,
-                        telegram = TRUE,
-                        youtube = TRUE) {
+                        text.color = "white",
+                        facebook = FALSE,
+                        linkedin = FALSE,
+                        twitter = FALSE,
+                        tumblr = FALSE,
+                        pinterest = FALSE,
+                        whatsapp = FALSE,
+                        reddit = FALSE,
+                        instagram = FALSE,
+                        blogger = FALSE,
+                        weibo = FALSE,
+                        tiktok = FALSE,
+                        vk = FALSE,
+                        telegram = FALSE,
+                        youtube = FALSE) {
+  # attach scripts
   if (is.null(options()$r2socialscriptsincluded)) {
     r2social.scripts()
   }
 
-  # fetch selected position
+  # fetch selected position and type
   position <- match.arg(position)
+  type <- match.arg(type)
 
-
+  # social links
   soc.each <- list(
     list(name = "facebook", color = "#1877f2", show = facebook, link = "https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/oobianom"),
     list(name = "linkedin", color = "#0A66C2", show = linkedin, link = "https://www.linkedin.com/shareArticle?mini=true&url=https%3A//github.com/oobianom"),
@@ -79,13 +83,15 @@ shareButton <- function(link,
     list(name = "youtube", color = "#ff0000", show = youtube, link = "https://viber://forward?text=")
   )
   shiny::div(
-    class = paste0("r2social-social-",position),
+    class = paste0("r2social-link-container r2social-social-",position),
+    style = paste0("color:", text.color),
 
     # add social icons
     lapply(soc.each, function(isc) {
       if (isc$show) {
         shiny::tags$a(
-          href = isc$link,
+          href = ifelse(type == "share",isc$link,link),
+          target = "_r2socialxlink",
           shiny::div(
             class = paste0("social-btn-",position),
             style = paste0("background-color:", isc$color),

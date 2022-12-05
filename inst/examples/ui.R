@@ -8,5 +8,5 @@ ui <- fluidPage(
   tableOutput("table"),
   r2social.scripts(),
   shareButton(position = "left"),
-  shareButton(position = "right")
+  shareButton(position = "inline")
 )

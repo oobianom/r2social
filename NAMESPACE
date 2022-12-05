@@ -2,3 +2,4 @@
 
 export(r2social.scripts)
 export(shareButton)
+export(socialButtons)
