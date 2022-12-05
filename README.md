@@ -11,6 +11,7 @@ library(r2social)
 ui <- fluidPage(
   r2social.scripts(),
   shareButton(link = "https://rpkg.net", position = "left"),
+  shareButton(link = "https://66pharm.com", position = "inline")
   shareButton(link = "https://obianom.com", position = "right")
 )
 
