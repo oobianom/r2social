@@ -12,14 +12,15 @@ vignette: >
 
 ## The goal of this new R package is to provide functions that allow the inclusion of share and connect buttons on any page. This has been tested in Rmarkdown documents as well as on simply Shiny applications. See the examples folder of this package.
 
-Constitutes the following features
+Constitutes the following features:
   
-      + Share link buttons
+      - [x] Share link buttons
       
-      + Connect buttons
+      - [x] Connect buttons
       
-      + Hyperlink buttons
+      - [x] Hyperlink buttons
 
+![](https://r2social.obi.obianom.com/r2social2.gif)
 
 ### Installation and Library Attachment
 
@@ -38,13 +39,11 @@ The r2social can be used within the R Markdown document or in Shiny applications
 
 #### Include the scripts and stylesheets
 
-```{r eval=TRUE,echo=TRUE}
-r2social.scripts()
-```
+`r2social.scripts()`
 
 #### Use in Shiny Application
 
-```{r}
+```{r eval=FALSE}
 
 library(shiny)
 library(r2social)
@@ -70,7 +69,7 @@ ui <- fluidPage(
 
 #### Use in Rmarkdown documents
 
-```{r}
+```{r eval=FALSE}
 
 library(r2social)
 

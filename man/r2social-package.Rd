@@ -4,9 +4,9 @@
 \name{r2social-package}
 \alias{r2social}
 \alias{r2social-package}
-\title{r2social: Social Buttons Inclusion on a Page}
+\title{r2social: App Inclusion of Social Sharing and Connect Buttons}
 \description{
-Add social buttons on 'Shiny', 'Markdown', 'Rmarkdown' and 'Quarto' documents.
+Add fancy social share buttons on 'Shiny', 'Markdown', 'Rmarkdown' and 'Quarto' documents.
 }
 \seealso{
 Useful links:

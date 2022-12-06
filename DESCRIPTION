@@ -12,6 +12,7 @@ Depends:
     R (>= 3.6)
 Imports: 
     utils,
+    htmltools,
     shiny
 Suggests: 
     rmarkdown,

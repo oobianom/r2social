@@ -1,13 +1,11 @@
 ---
-title: "r2social R package: Add social share and connect buttons on all your Rmarkdown documents and Shiny applications"
+title: "r2social R package example: Add social share and connect buttons on all your Rmarkdown documents and Shiny applications"
 output:
   html_document:
     theme: default
 ---
 
-### Visit docs: https://github.com/oobianom/r2social
 
-#### Coming soon to CRAN, stay updated
 
 #### Example
 
@@ -17,11 +15,23 @@ r2social.scripts()
 shareButton(link = "http://rpkg.net", position = "left")
 shareButton(link = "http://obianom.com", position = "right")
 shareButton(link = "http://66pharm.com", position = "inline")
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet sit amet cursus sit amet dictum sit. In pellentesque massa placerat duis ultricies lacus sed.
+
+
+```{r, results='asis'}
 connectButton(link = "http://rpkg.net", visit.us = TRUE, position = "inline")
 connectButton(link = "https://www.linkedin.com/in/oobianom", linkedin = TRUE, position = "inline")
+connectButton(link = "https://weibo.com/R2Rpkg", weibo = TRUE, position = "inline", display.inline = FALSE)
+```
+
+Tristique senectus et netus et malesuada fames. Suspendisse ultrices gravida dictum fusce ut placerat orci nulla. In vitae turpis massa sed elementum tempus egestas sed. Feugiat in ante metus dictum at tempor commodo ullamcorper a.
+
+```{r, results='asis'}
 connectButton(link = "https://twitter.com/R2Rpkg", twitter = TRUE, position = "inline", display.inline = FALSE)
-connectButton(link = "https://twitter.com/R2Rpkg", twitter = TRUE, position = "inline", display.inline = FALSE)
+connectButton(link = "https://reddit.com/R2Rpkg", reddit = TRUE, position = "inline", display.inline = FALSE)
 ```
 
 
-
+Magna eget est lorem ipsum. Erat imperdiet sed euismod nisi porta lorem. Amet justo donec enim diam vulputate ut pharetra sit amet. Quis commodo odio aenean sed adipiscing diam donec. Lacus vestibulum sed arcu non odio. Odio eu feugiat pretium nibh ipsum consequat nisl vel pretium.

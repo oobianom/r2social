@@ -2,11 +2,11 @@
 #'
 #' Customize social buttons available for sharing of pages
 #'
-#' @param link,
-#' @param image = NULL,
-#' @param text = NULL,
-#' @param position = c("left","right","bottom","inline"),
-#' @param text.color = "black",
+#' @param link the link to share on social media
+#' @param image image link only for pinterest
+#' @param text text link for twitter
+#' @param position position of buttons e.g "left","right","bottom","inline"
+#' @param display.inline TRUE or FALSE if the button should be inline
 #' @param facebook share on Facebook
 #' @param linkedin share on Linkedin
 #' @param twitter share on Twitter

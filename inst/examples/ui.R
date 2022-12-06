@@ -4,7 +4,6 @@ library(r2social)
 
 ui <- fluidPage(
   r2social.scripts(),
-  shareButton(link = "http://obianom.com", position = "left"),
   shareButton(link = "http://obianom.com", position = "right"),
   shareButton(link = "http://google.com", position = "inline"),
   selectInput("dataset", label = "Dataset", choices = ls("package:datasets")),

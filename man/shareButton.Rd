@@ -13,18 +13,18 @@ shareButton(
   facebook = TRUE,
   linkedin = TRUE,
   twitter = TRUE,
-  tumblr = TRUE,
-  pinterest = TRUE,
-  whatsapp = TRUE,
+  tumblr = FALSE,
+  pinterest = FALSE,
+  whatsapp = FALSE,
   reddit = TRUE,
-  instagram = TRUE,
-  blogger = TRUE,
+  instagram = FALSE,
+  blogger = FALSE,
   weibo = TRUE,
-  tiktok = TRUE,
-  vk = TRUE,
-  telegram = TRUE,
-  youtube = TRUE,
-  visit.us = TRUE
+  tiktok = FALSE,
+  vk = FALSE,
+  telegram = FALSE,
+  youtube = FALSE,
+  visit.us = FALSE
 )
 }
 \arguments{

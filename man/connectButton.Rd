@@ -10,7 +10,7 @@ connectButton(
   text = NULL,
   position = c("left", "right", "inline"),
   display.inline = TRUE,
-  link.out = FALSE,
+  link.out = TRUE,
   visit.us = FALSE,
   facebook = FALSE,
   linkedin = FALSE,
@@ -82,8 +82,16 @@ More examples and demo pages are located at this link -
 }
 
 \examples{
-connectButton(link = "http://rpkg.net", visit.us = TRUE, position = "left")
-connectButton(link = "https://www.linkedin.com/in/oobianom", linkedin = TRUE, position = "right")
-connectButton(link = "https://twitter.com/R2Rpkg", twitter = TRUE, position = "inline")
+connectButton(
+link = "//rpkg.net",
+visit.us = TRUE,
+position = "left")
+connectButton(
+link = "//www.linkedin.com/in/oobianom",
+linkedin = TRUE,
+position = "right")
+connectButton(
+link = "//twitter.com/R2Rpkg",
+twitter = TRUE, position = "inline")
 
 }
