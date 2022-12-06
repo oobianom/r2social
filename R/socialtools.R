@@ -58,10 +58,6 @@ socialButtons <- function(link,
                           youtube = FALSE,
                           visit.us = FALSE,
                           link.out = FALSE) {
-  # attach scripts
-  if (is.null(options()$r2socialscriptsincluded)) {
-    r2social.scripts()
-  }
 
   # fetch selected position and type
   position <- match.arg(position)
@@ -142,8 +138,6 @@ socialButtons <- function(link,
 #'
 
 r2social.scripts <- function(name = "sharesocial") {
-  # if(is.null(options()$r2socialscriptsincluded)) return()
-  # options(r2socialscriptsincluded = TRUE)
 
   template.loc1 <- file.path(find.package(package = pkgn), "themes")
   css <- paste0(name, ".css")

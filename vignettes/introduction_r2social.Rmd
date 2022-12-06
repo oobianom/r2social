@@ -1,52 +1,93 @@
 ---
-title: "Welcome to r2social: Inclusion of social buttons on a page"
+title: "Welcome to r2social: Inclusion of social sharing and connect buttons on a page"
 author: "Obinna N. Obianom"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Welcome to r2social: Inclusion of social buttons on a page}
+  %\VignetteIndexEntry{Welcome to r2social: Inclusion of social sharing and connect buttons on a page}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 
-## Easily add automatic resizing toolbar for all images and tables in Markdown, Rmarkdown and Quarto documents
+## The goal of this new R package is to provide functions that allow the inclusion of share and connect buttons on any page. This has been tested in Rmarkdown documents as well as on simply Shiny applications. See the examples folder of this package.
+
+
 
 ### Installation and Library Attachment
 
-The r2resize package is available on CRAN and can be installed as shown below
+The r2social package is available on CRAN and can be installed as shown below
 
-`install.packages(r2resize)`
+`install.packages(r2social)`
 
 Attach library 
 
-`library(r2resize)`
+`library(r2social)`
 
 ### Use
 
-The r2resize can be used within the R Markdown or Quarto document using an R chunk as shown below
+The r2social can be used within the R Markdown document or in Shiny applications as shown below
 
 
-`r2resize::add.resizer()`
-
-or by using the available options. An example of how the available options can be used is show below
+#### Include the scripts and stylesheets
 
 ```{r eval=TRUE,echo=TRUE}
-r2resize::add.resizer(
-  theme.color = "black",
-  position = "top",
-  font.size = "12px",
-  font.color = "darkblue",
-  tables = TRUE,
-  images = TRUE,
-  line.color = "orange",
-  line.width = 150
-)
+r2social.scripts()
 ```
 
-### Quick demo: https://r2resize.obi.obianom.com/r2resize-package.gif
+#### Use in Shiny Application
+
+```{r}
+
+library(shiny)
+library(r2social)
+
+ui <- fluidPage(
+  
+  r2social.scripts(),
+  
+  #include share buttons
+  shareButton(link = "http://rpkg.net", position = "left"),
+  shareButton(link = "http://obianom.com", position = "right"),
+  shareButton(link = "http://google.com", position = "inline"),
+  
+  #include customized connect buttons where you specify direct links
+  connectButton(link = "http://rpkg.net", visit.us=TRUE, position = "inline"),
+  connectButton(link = "https://www.linkedin.com/in/oobianom", linkedin=TRUE, position = "inline"),
+  connectButton(link = "https://twitter.com/R2Rpkg", twitter=TRUE, position = "inline",display.inline = FALSE),
+  connectButton(link = "https://twitter.com/R2Rpkg", twitter=TRUE, position = "inline",display.inline = FALSE)
+)
+
+
+```
+
+#### Use in Rmarkdown documents
+
+```{r}
+
+library(shiny)
+library(r2social)
+
+ui <- fluidPage(
+  
+  r2social.scripts(),
+  
+  #include share buttons
+  shareButton(link = "http://rpkg.net", position = "left"),
+  shareButton(link = "http://obianom.com", position = "right"),
+  shareButton(link = "http://google.com", position = "inline"),
+  
+  #include customized connect buttons where you specify direct links
+  connectButton(link = "http://rpkg.net", visit.us=TRUE, position = "inline"),
+  connectButton(link = "https://www.linkedin.com/in/oobianom", linkedin=TRUE, position = "inline"),
+  connectButton(link = "https://twitter.com/R2Rpkg", twitter=TRUE, position = "inline",display.inline = FALSE),
+  connectButton(link = "https://twitter.com/R2Rpkg", twitter=TRUE, position = "inline",display.inline = FALSE)
+)
+
+
+```
 
 
 ## Full examples and documentation
 
- + https://r2resize.obi.obianom.com
+ + https://r2social.obi.obianom.com
