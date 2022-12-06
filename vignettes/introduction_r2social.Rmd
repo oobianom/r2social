@@ -75,7 +75,7 @@ ui <- fluidPage(
   #include share buttons
   shareButton(link = "http://rpkg.net", position = "left"),
   shareButton(link = "http://obianom.com", position = "right"),
-  shareButton(link = "http://google.com", position = "inline"),
+  shareButton(link = "http://66pharm.com", position = "inline"),
   
   #include customized connect buttons where you specify direct links
   connectButton(link = "http://rpkg.net", visit.us=TRUE, position = "inline"),
