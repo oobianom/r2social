@@ -1,7 +1,12 @@
 # r2social 1.0
 
-## Features
+Features
 
   + Social buttons
   
-  + Two styles
+      + Share link buttons
+      
+      + Connect buttons
+      
+      + Hyperlink buttons
+      

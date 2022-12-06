@@ -6,22 +6,42 @@
 [![](https://cranlogs.r-pkg.org/badges/last-week/r2social)](https://cran.r-project.org/package=r2social)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/r2social)](https://cran.r-project.org/package=r2social)
 
-under development...
+
+## Example
+
+![](https://r2social.obi.obianom.com/r2social2.gif)
+
+
+
+
+### Shiny application
 
 ```{r}
 
 library(shiny)
 library(r2social)
 
-
 ui <- fluidPage(
   r2social.scripts(),
   shareButton(link = "https://rpkg.net", position = "left"),
-  shareButton(link = "https://66pharm.com", position = "inline")
+  shareButton(link = "https://66pharm.com", position = "inline"),
   shareButton(link = "https://obianom.com", position = "right")
 )
 
 
 ```
 
-![](https://r2social.obi.obianom.com/r2social2.gif)
+### Rmarkdown document
+
+```{r}
+
+library(r2social)
+
+r2social.scripts()
+shareButton(link = "https://rpkg.net", position = "left")
+shareButton(link = "https://66pharm.com", position = "inline")
+shareButton(link = "https://obianom.com", position = "right")
+
+
+
+```
