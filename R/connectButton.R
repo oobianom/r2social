@@ -2,7 +2,7 @@
 #'
 #' Buttons for others to connect socially to you
 #'
-#' @param link the direct link to navigate to
+#' @param link the direct link to connect to
 #' @param image image link only for pinterest
 #' @param text text link for twitter
 #' @param position position of buttons e.g "left","right","bottom","inline"

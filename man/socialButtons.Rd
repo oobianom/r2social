@@ -38,9 +38,9 @@ socialButtons(
 
 \item{text}{text link for twitter only}
 
-\item{position}{= c("left","right","bottom","inline"),}
+\item{position}{position of buttons e.g "left","right","bottom","inline"}
 
-\item{text.color}{= "black",}
+\item{text.color}{text color}
 
 \item{facebook}{share on Facebook}
 
@@ -86,6 +86,6 @@ More examples and demo pages are located at this link -
 
 \examples{
 
-socialButtons("https://66pharm.com")
+socialButtons("https://66pharm.com",facebook = TRUE)
 
 }

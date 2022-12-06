@@ -28,13 +28,15 @@ shareButton(
 )
 }
 \arguments{
-\item{image}{= NULL,}
+\item{link}{the link to share on social media}
 
-\item{text}{= NULL,}
+\item{image}{the image link to share on social media}
 
-\item{position}{= c("left","right","bottom","inline"),}
+\item{text}{the text to share on social media}
 
-\item{text.color}{= "black",}
+\item{position}{of buttons e.g "left","right","bottom","inline"}
+
+\item{text.color}{text color e.g black}
 
 \item{facebook}{share on Facebook}
 
@@ -67,7 +69,7 @@ shareButton(
 \item{visit.us}{share on custom link}
 }
 \value{
-Share link button via social links
+Share link button via social media platforms
 }
 \description{
 Customize social buttons available for sharing of pages
@@ -80,8 +82,8 @@ More examples and demo pages are located at this link -
 
 \examples{
 
-shareButton(link = "http://rpkg.net", position = "left"),
-shareButton(link = "http://obianom.com", position = "right"),
+shareButton(link = "http://rpkg.net", position = "left")
+shareButton(link = "http://obianom.com", position = "right")
 shareButton(link = "http://66pharm.com", position = "inline")
 
 }

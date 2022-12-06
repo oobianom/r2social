@@ -3,10 +3,10 @@
 #' Customize social buttons available for sharing of pages
 #'
 #' @param link the link to share on social media
-#' @param image image link only for pinterest
-#' @param text text link for twitter
-#' @param position position of buttons e.g "left","right","bottom","inline"
-#' @param display.inline TRUE or FALSE if the button should be inline
+#' @param image the image link to share on social media
+#' @param text the text to share on social media
+#' @param position of buttons e.g "left","right","bottom","inline"
+#' @param text.color text color e.g black
 #' @param facebook share on Facebook
 #' @param linkedin share on Linkedin
 #' @param twitter share on Twitter
@@ -27,12 +27,12 @@
 #' More examples and demo pages are located at this link -
 #' \url{https://r2social.obi.obianom.com}.
 #'
-#' @return Share link button via social links
+#' @return Share link button via social media platforms
 #'
 #' @examples
 #'
-#' shareButton(link = "http://rpkg.net", position = "left"),
-#' shareButton(link = "http://obianom.com", position = "right"),
+#' shareButton(link = "http://rpkg.net", position = "left")
+#' shareButton(link = "http://obianom.com", position = "right")
 #' shareButton(link = "http://66pharm.com", position = "inline")
 #'
 #' @export

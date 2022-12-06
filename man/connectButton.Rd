@@ -29,6 +29,8 @@ connectButton(
 )
 }
 \arguments{
+\item{link}{the direct link to connect to}
+
 \item{image}{image link only for pinterest}
 
 \item{text}{text link for twitter}
