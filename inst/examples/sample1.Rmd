@@ -1,21 +1,27 @@
 ---
-title: "r2social tests"
+title: "r2social R package: Add social share and connect buttons on all your Rmarkdown documents and Shiny applications"
 output:
   html_document:
     theme: default
-    toc: false
-    toc_depth: 3
-    toc_float: true
 ---
 
 ### Visit docs: https://github.com/oobianom/r2social
 
+#### Coming soon to CRAN, stay updated
+
+#### Example
+
 ```{r, results='asis'}
 library(r2social)
 r2social.scripts()
+shareButton(link = "http://rpkg.net", position = "left")
+shareButton(link = "http://obianom.com", position = "right")
+shareButton(link = "http://66pharm.com", position = "inline")
+connectButton(link = "http://rpkg.net", visit.us = TRUE, position = "inline")
+connectButton(link = "https://www.linkedin.com/in/oobianom", linkedin = TRUE, position = "inline")
+connectButton(link = "https://twitter.com/R2Rpkg", twitter = TRUE, position = "inline", display.inline = FALSE)
+connectButton(link = "https://twitter.com/R2Rpkg", twitter = TRUE, position = "inline", display.inline = FALSE)
 ```
 
-Hellow
 
-`r r2social.scripts()`
-`r sharebutton()`
+

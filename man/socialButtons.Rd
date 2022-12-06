@@ -24,7 +24,9 @@ socialButtons(
   tiktok = FALSE,
   vk = FALSE,
   telegram = FALSE,
-  youtube = FALSE
+  youtube = FALSE,
+  visit.us = FALSE,
+  link.out = FALSE
 )
 }
 \arguments{
@@ -66,7 +68,9 @@ socialButtons(
 
 \item{telegram}{share on Telegram}
 
-\item{youtube}{share on Youtube}
+\item{visit.us}{visit a direct link}
+
+\item{link.out}{hyperlink to a page}
 }
 \value{
 Resizeable split screen container

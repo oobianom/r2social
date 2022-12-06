@@ -21,7 +21,8 @@
 #' @param tiktok share on tiktok
 #' @param vk share on VK or VKontakte
 #' @param telegram share on Telegram
-#' @param youtube share on Youtube
+#' @param visit.us visit a direct link
+#' @param link.out hyperlink to a page
 #'
 #' @section Examples for r2social:
 #' More examples and demo pages are located at this link -
@@ -36,25 +37,27 @@
 #' @export
 
 socialButtons <- function(link,
-                          type = c("share","connect"),
-                        image = NULL,
-                        text = NULL,
-                        position = c("left", "right", "inline"),
-                        text.color = "white",
-                        facebook = FALSE,
-                        linkedin = FALSE,
-                        twitter = FALSE,
-                        tumblr = FALSE,
-                        pinterest = FALSE,
-                        whatsapp = FALSE,
-                        reddit = FALSE,
-                        instagram = FALSE,
-                        blogger = FALSE,
-                        weibo = FALSE,
-                        tiktok = FALSE,
-                        vk = FALSE,
-                        telegram = FALSE,
-                        youtube = FALSE) {
+                          type = c("share", "connect"),
+                          image = NULL,
+                          text = NULL,
+                          position = c("left", "right", "inline"),
+                          text.color = "white",
+                          facebook = FALSE,
+                          linkedin = FALSE,
+                          twitter = FALSE,
+                          tumblr = FALSE,
+                          pinterest = FALSE,
+                          whatsapp = FALSE,
+                          reddit = FALSE,
+                          instagram = FALSE,
+                          blogger = FALSE,
+                          weibo = FALSE,
+                          tiktok = FALSE,
+                          vk = FALSE,
+                          telegram = FALSE,
+                          youtube = FALSE,
+                          visit.us = FALSE,
+                          link.out = FALSE) {
   # attach scripts
   if (is.null(options()$r2socialscriptsincluded)) {
     r2social.scripts()
@@ -65,40 +68,44 @@ socialButtons <- function(link,
   type <- match.arg(type)
 
   # encode link
-  link = URLencode(link)
+  link <- URLencode(link)
+  url.prefix <- "https://"
+  text <- ifelse(is.null(text), "", text)
 
   # social links
   soc.each <- list(
-    list(name = "facebook", color = "#1877f2", show = facebook, link = "https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/oobianom"),
-    list(name = "linkedin", color = "#0A66C2", show = linkedin, link = "https://www.linkedin.com/shareArticle?mini=true&url=https%3A//github.com/oobianom"),
-    list(name = "twitter", color = "#1DA1F2", show = twitter, link = "https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Foobianom&text=Check%20this%20out%20for%20me"),
-    list(name = "tumblr", color = "#529ECC", show = tumblr, link = "https://www.tumblr.com/share?v=3&u=https%3A%2F%2Fgithub.com%2Foobianom&t=Check%20this%20out%20for%20me"),
-    list(name = "pinterest", color = "#E60023", show = pinterest, link = "https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fgithub.com%2Foobianom&media=https%3A%2F%2Fobinna.obianom.com%2Fsite_libs%2FRPPkg-1.0%2Fassets%2Fimages%2Fprofile.jpg&description=Check%20this%20out%20for%20me"),
-    list(name = "whatsapp", color = "#24cc63", show = whatsapp, link = "https://web.whatsapp.com/send?text=www.google.com"),
-    list(name = "reddit", color = "#FF5700", show = reddit, link = "https://reddit.com/submit?url=&title="),
-    list(name = "baidu", color = "black", show = FALSE, link = "https://cang.baidu.com/do/add?it=&iu="),
-    list(name = "blogger", color = "#fc4f08", show = blogger, link = "https://www.blogger.com/blog-this.g?u=&n=&t="),
-    list(name = "weibo", color = "#ce1126", show = weibo, link = "https://service.weibo.com/share/share.php?url=&title="),
-    list(name = "tiktok", color = "#010101", show = tiktok, link = "https://service.weibo.com/share/share.php?url=&title="),
-    list(name = "instagram", color = "#C32AA3", show = instagram, link = "https://www.xing.com/app/user?op=share&url="),
-    list(name = "telegram", color = "#0088cc", show = telegram, link = "https://telegram.me/share/url?url=&text="),
-    list(name = "vk", color = "#4a76a8", show = vk, link = "https://vk.com/share.php?url="),
-    list(name = "youtube", color = "#ff0000", show = youtube, link = "https://viber://forward?text=")
+    list(name = "facebook", color = "#1877f2", show = facebook, link = paste0(url.prefix, "www.facebook.com/sharer/sharer.php?u=", link)),
+    list(name = "linkedin", color = "#0A66C2", show = linkedin, link = paste0(url.prefix, "www.linkedin.com/shareArticle?mini=true&url=", link)),
+    list(name = "twitter", color = "#1DA1F2", show = twitter, link = paste0(url.prefix, "twitter.com/intent/tweet?url=", link, "&text=", URLencode(text))),
+    list(name = "tumblr", color = "#529ECC", show = tumblr, link = paste0(url.prefix, "www.tumblr.com/share?v=3&u=", link, "&t=", URLencode(text))),
+    list(name = "pinterest", color = "#E60023", show = pinterest, link = paste0(url.prefix, "pinterest.com/pin/create/button/?url=", URLencode(text), "&media=", ifelse(is.null(image), "", URLencode(image)), "&description=", URLencode(text))),
+    list(name = "whatsapp", color = "#24cc63", show = whatsapp, link = paste0(url.prefix, "web.whatsapp.com/send?text=", URLencode(text), " ", link)),
+    list(name = "reddit", color = "#FF5700", show = reddit, link = paste0(url.prefix, "reddit.com/submit?url=", link, "&title=", URLencode(text))),
+    list(name = "baidu", color = "black", show = FALSE, link = paste0(url.prefix, "cang.baidu.com/do/add?iu=", link, "&it=", URLencode(text))),
+    list(name = "blogger", color = "#fc4f08", show = blogger, link = paste0(url.prefix, "www.blogger.com/blog-this.g?u=", link, "&n=", link, "&t=", URLencode(text))),
+    list(name = "weibo", color = "#ce1126", show = weibo, link = paste0(url.prefix, "service.weibo.com/share/share.php?url=", link, "&title=", URLencode(text))),
+    list(name = "tiktok", color = "#010101", show = tiktok, link = paste0(url.prefix, "www.tiktok.com/@addisonre?url=", link)),
+    list(name = "link out", color = "#cccccc", show = link.out, link = paste0(link, "?title=", URLencode(text))),
+    list(name = "visit us", color = "#cccccc", show = visit.us, link = paste0(link, "?title=", URLencode(text))),
+    list(name = "instagram", color = "#C32AA3", show = instagram, link = paste0(url.prefix, "www.xing.com/app/user?op=share&url=", link)),
+    list(name = "telegram", color = "#0088cc", show = telegram, link = paste0(url.prefix, "telegram.me/share/url?url=", link, "&text=", URLencode(text))),
+    list(name = "vk", color = "#4a76a8", show = vk, link = paste0(url.prefix, "vk.com/share.php?url=", link)),
+    list(name = "youtube", color = "#ff0000", show = youtube, link = link)
   )
   shiny::div(
-    class = paste0("r2social-link-container r2social-social-",position),
+    class = paste0("r2social-link-container r2social-social-", position),
 
     # add social icons
     lapply(soc.each, function(isc) {
       if (isc$show) {
         shiny::tags$a(
-          href = ifelse(type == "share",isc$link,link),
+          href = ifelse(type == "share", isc$link, link),
           target = "_r2socialxlink",
           shiny::div(
-            class = paste0("social-btn-",position),
+            class = paste0("social-btn-", position),
             style = paste0("background-color:", isc$color),
             shiny::div(
-              class = paste0("r2social-icons-",position," r2s-ico-", isc$name)
+              class = paste0("r2social-icons-", position, " r2s-ico-", gsub("[^[:alnum:]]", "-", isc$name))
             ),
             shiny::p(
               class = "order-1 google-font margin-telgram",
@@ -165,8 +172,8 @@ r2social.scripts <- function(name = "sharesocial") {
     # collapse and set to html
     tear.combo <- paste(combine.css.js, collapse = "")
     # set to html
-    attr(tear.combo, scr.elm[3]) <- TRUE
-    class(tear.combo) <- c(scr.elm[4], "character")
+    attr(tear.combo, "html") <- TRUE
+    class(tear.combo) <- c("html", "character")
     # display html
     return(tear.combo)
   }

@@ -23,7 +23,8 @@ shareButton(
   tiktok = TRUE,
   vk = TRUE,
   telegram = TRUE,
-  youtube = TRUE
+  youtube = TRUE,
+  visit.us = TRUE
 )
 }
 \arguments{
@@ -62,9 +63,11 @@ shareButton(
 \item{telegram}{share on Telegram}
 
 \item{youtube}{share on Youtube}
+
+\item{visit.us}{share on custom link}
 }
 \value{
-Resizeable split screen container
+Share link button via social links
 }
 \description{
 Customize social buttons available for sharing of pages
@@ -72,11 +75,13 @@ Customize social buttons available for sharing of pages
 \section{Examples for r2social}{
 
 More examples and demo pages are located at this link -
-\url{https://rpkg.net/package/r2social}.
+\url{https://r2social.obi.obianom.com}.
 }
 
 \examples{
 
-shareButton()
+shareButton(link = "http://rpkg.net", position = "left"),
+shareButton(link = "http://obianom.com", position = "right"),
+shareButton(link = "http://66pharm.com", position = "inline")
 
 }
