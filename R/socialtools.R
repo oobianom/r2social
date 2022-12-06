@@ -16,9 +16,10 @@
 #' @param instagram share on Instagram
 #' @param whatsapp share on Whatsapp
 #' @param reddit share on Reddit
-#' @param blogger share on blogger
-#' @param weibo share on weibo
-#' @param tiktok share on tiktok
+#' @param blogger share on Blogger
+#' @param weibo share on Weibo
+#' @param tiktok share on Tiktok
+#' @param youtube share on Youtube
 #' @param vk share on VK or VKontakte
 #' @param telegram share on Telegram
 #' @param visit.us visit a direct link

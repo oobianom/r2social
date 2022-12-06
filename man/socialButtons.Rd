@@ -58,15 +58,17 @@ socialButtons(
 
 \item{instagram}{share on Instagram}
 
-\item{blogger}{share on blogger}
+\item{blogger}{share on Blogger}
 
-\item{weibo}{share on weibo}
+\item{weibo}{share on Weibo}
 
-\item{tiktok}{share on tiktok}
+\item{tiktok}{share on Tiktok}
 
 \item{vk}{share on VK or VKontakte}
 
 \item{telegram}{share on Telegram}
+
+\item{youtube}{share on Youtube}
 
 \item{visit.us}{visit a direct link}
 
