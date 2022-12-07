@@ -12,15 +12,13 @@
 #' @param twitter share on Twitter
 #' @param tumblr share on Tumblr
 #' @param pinterest share on Pinterest
-#' @param instagram share on Instagram
 #' @param whatsapp share on Whatsapp
 #' @param reddit share on Reddit
-#' @param blogger share on blogger
-#' @param weibo share on weibo
-#' @param tiktok share on tiktok
+#' @param blogger share on Blogger
+#' @param weibo share on Weibo
+#' @param tiktok share on Tiktok
 #' @param vk share on VK or VKontakte
 #' @param telegram share on Telegram
-#' @param youtube share on Youtube
 #' @param visit.us share on custom link
 #'
 #' @section Examples for r2social:
@@ -49,13 +47,11 @@ shareButton <- function(link,
                         pinterest = FALSE,
                         whatsapp = FALSE,
                         reddit = TRUE,
-                        instagram = FALSE,
                         blogger = FALSE,
                         weibo = TRUE,
                         tiktok = FALSE,
                         vk = FALSE,
                         telegram = FALSE,
-                        youtube = FALSE,
                         visit.us = FALSE) {
   # fetch selected position
   position <- match.arg(position)
@@ -74,13 +70,11 @@ shareButton <- function(link,
     pinterest = pinterest,
     whatsapp = whatsapp,
     reddit = reddit,
-    instagram = instagram,
     blogger = blogger,
     weibo = weibo,
     tiktok = tiktok,
     vk = vk,
     visit.us = visit.us,
-    telegram = telegram,
-    youtube = youtube
+    telegram = telegram
   )
 }

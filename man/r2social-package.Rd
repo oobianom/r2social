@@ -6,7 +6,7 @@
 \alias{r2social-package}
 \title{r2social: App Inclusion of Social Sharing and Connect Buttons}
 \description{
-Implementation of 'JavaScript' and 'CSS' styles to allow easy incorporation of various social media elements on a page. The elements include addition of share buttons or connect with us buttons or hyperlink buttons to 'Shiny' applications or dashboards and 'Rmardown' documents.
+Implementation of 'JQuery' \url{https://jquery.com} and 'CSS' styles to allow easy incorporation of various social media elements on a page. The elements include addition of share buttons or connect with us buttons or hyperlink buttons to 'Shiny' applications or dashboards and 'Rmarkdown' documents.Sharing capability on social media plaforms including 'Facebook' \url{https://www.facebook.com}, 'Linkedin' \url{https://www.linkedin.com}, 'Twitter' \url{https://twitter.com}, 'Tumblr' \url{https://www.tumblr.com}, 'Pinterest' \url{https://www.pinterest.com}, 'Whatsapp' \url{https://www.whatsapp.com}, 'Reddit' \url{https://www.reddit.com}, 'Baidu' \url{https://www.baidu.com}, 'Blogger' \url{https://www.blogger.com}, 'Weibo' \url{https://www.weibo.com}, 'Instagram' \url{https://www.instagram.com}, 'Telegram' \url{https://www.telegram.me}, 'Youtube' \url{https://www.youtube.com}.
 }
 \seealso{
 Useful links:

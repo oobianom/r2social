@@ -23,6 +23,7 @@ socialButtons(
   weibo = FALSE,
   tiktok = FALSE,
   vk = FALSE,
+  baidu = FALSE,
   telegram = FALSE,
   youtube = FALSE,
   visit.us = FALSE,
@@ -66,6 +67,8 @@ socialButtons(
 
 \item{vk}{share on VK or VKontakte}
 
+\item{baidu}{share on Baidu}
+
 \item{telegram}{share on Telegram}
 
 \item{youtube}{share on Youtube}
@@ -75,7 +78,7 @@ socialButtons(
 \item{link.out}{hyperlink to a page}
 }
 \value{
-Resizeable split screen container
+Social links button to be placed on pages
 }
 \description{
 For use in making buttons to share a page or connect to your social media

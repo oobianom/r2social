@@ -17,13 +17,11 @@ shareButton(
   pinterest = FALSE,
   whatsapp = FALSE,
   reddit = TRUE,
-  instagram = FALSE,
   blogger = FALSE,
   weibo = TRUE,
   tiktok = FALSE,
   vk = FALSE,
   telegram = FALSE,
-  youtube = FALSE,
   visit.us = FALSE
 )
 }
@@ -52,19 +50,15 @@ shareButton(
 
 \item{reddit}{share on Reddit}
 
-\item{instagram}{share on Instagram}
+\item{blogger}{share on Blogger}
 
-\item{blogger}{share on blogger}
+\item{weibo}{share on Weibo}
 
-\item{weibo}{share on weibo}
-
-\item{tiktok}{share on tiktok}
+\item{tiktok}{share on Tiktok}
 
 \item{vk}{share on VK or VKontakte}
 
 \item{telegram}{share on Telegram}
-
-\item{youtube}{share on Youtube}
 
 \item{visit.us}{share on custom link}
 }

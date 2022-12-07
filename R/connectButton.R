@@ -26,7 +26,7 @@
 #'
 #' @section Examples for r2social:
 #' More examples and demo pages are located at this link -
-#' \url{https://rpkg.net/package/r2social}.
+#' \url{https://r2social.obi.obianom.com}.
 #'
 #' @return Connect with me/us button via social links
 #'

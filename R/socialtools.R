@@ -19,6 +19,7 @@
 #' @param blogger share on Blogger
 #' @param weibo share on Weibo
 #' @param tiktok share on Tiktok
+#' @param baidu share on Baidu
 #' @param youtube share on Youtube
 #' @param vk share on VK or VKontakte
 #' @param telegram share on Telegram
@@ -29,7 +30,7 @@
 #' More examples and demo pages are located at this link -
 #' \url{https://rpkg.net/package/r2social}.
 #'
-#' @return Resizeable split screen container
+#' @return Social links button to be placed on pages
 #'
 #' @examples
 #'
@@ -55,6 +56,7 @@ socialButtons <- function(link,
                           weibo = FALSE,
                           tiktok = FALSE,
                           vk = FALSE,
+                          baidu = FALSE,
                           telegram = FALSE,
                           youtube = FALSE,
                           visit.us = FALSE,
@@ -78,16 +80,16 @@ socialButtons <- function(link,
     list(name = "pinterest", color = "#E60023", show = pinterest, link = paste0(url.prefix, "pinterest.com/pin/create/button/?url=", utils::URLencode(text), "&media=", ifelse(is.null(image), "", utils::URLencode(image)), "&description=", utils::URLencode(text))),
     list(name = "whatsapp", color = "#24cc63", show = whatsapp, link = paste0(url.prefix, "web.whatsapp.com/send?text=", utils::URLencode(text), " ", link)),
     list(name = "reddit", color = "#FF5700", show = reddit, link = paste0(url.prefix, "reddit.com/submit?url=", link, "&title=", utils::URLencode(text))),
-    list(name = "baidu", color = "black", show = FALSE, link = paste0(url.prefix, "cang.baidu.com/do/add?iu=", link, "&it=", utils::URLencode(text))),
+    list(name = "baidu", color = "black", show = baidu, link = paste0(url.prefix, "cang.baidu.com/do/add?iu=", link, "&it=", utils::URLencode(text))),
     list(name = "blogger", color = "#fc4f08", show = blogger, link = paste0(url.prefix, "www.blogger.com/blog-this.g?u=", link, "&n=", link, "&t=", utils::URLencode(text))),
     list(name = "weibo", color = "#ce1126", show = weibo, link = paste0(url.prefix, "service.weibo.com/share/share.php?url=", link, "&title=", utils::URLencode(text))),
-    list(name = "tiktok", color = "#010101", show = tiktok, link = paste0(url.prefix, "www.tiktok.com/@addisonre?url=", link)),
+    list(name = "tiktok", color = "#333333", show = tiktok, link = paste0(url.prefix, "tiktok.com/@addisonre?url=", link)),
     list(name = "link out", color = "#cccccc", show = link.out, link = paste0(link, "?title=", utils::URLencode(text))),
     list(name = "visit us", color = "#cccccc", show = visit.us, link = paste0(link, "?title=", utils::URLencode(text))),
-    list(name = "instagram", color = "#C32AA3", show = instagram, link = paste0(url.prefix, "www.xing.com/app/user?op=share&url=", link)),
+    list(name = "instagram", color = "#C32AA3", show = instagram, link = paste0(url.prefix, "www.instagram.com/app/user?op=share&url=", link)),
     list(name = "telegram", color = "#0088cc", show = telegram, link = paste0(url.prefix, "telegram.me/share/url?url=", link, "&text=", utils::URLencode(text))),
     list(name = "vk", color = "#4a76a8", show = vk, link = paste0(url.prefix, "vk.com/share.php?url=", link)),
-    list(name = "youtube", color = "#ff0000", show = youtube, link = link)
+    list(name = "youtube", color = "#ff0000", show = youtube, link = paste0(url.prefix, "youtube.com/share?url=", link))
   )
   shiny::div(
     class = paste0("r2social-link-container r2social-social-", position),
