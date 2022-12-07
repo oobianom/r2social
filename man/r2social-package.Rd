@@ -6,14 +6,18 @@
 \alias{r2social-package}
 \title{r2social: App Inclusion of Social Sharing and Connect Buttons}
 \description{
-Add fancy social share buttons on 'Shiny', 'Markdown', 'Rmarkdown' and 'Quarto' documents.
+Implementation of 'JavaScript' and 'CSS' styles to allow easy incorporation of various social media elements on a page. The elements include addition of share buttons or connect with us buttons or hyperlink buttons to 'Shiny' applications or dashboards and 'Rmardown' documents.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://r2social.obi.obianom.com/}
+  \item \url{https://r2social.obi.obianom.com}
   \item Report bugs at \url{https://github.com/oobianom/r2social/issues}
 }
+
+}
+\author{
+\strong{Maintainer}: Obinna Obianom \email{idonshayo@gmail.com}
 
 }
 \keyword{internal}

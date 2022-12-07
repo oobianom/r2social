@@ -2,11 +2,12 @@ Package: r2social
 Type: Package
 Title: App Inclusion of Social Sharing and Connect Buttons
 Version: 1.0
-Author: Obinna Obianom
+Authors@R: c(
+    person("Obinna", "Obianom", email = "idonshayo@gmail.com", role = c("aut", "cre")))
 Maintainer: Obinna Obianom <idonshayo@gmail.com>
-Description: Add fancy social share buttons on 'Shiny', 'Markdown', 'Rmarkdown' and 'Quarto' documents.
+Description: Implementation of 'JavaScript' and 'CSS' styles to allow easy incorporation of various social media elements on a page. The elements include addition of share buttons or connect with us buttons or hyperlink buttons to 'Shiny' applications or dashboards and 'Rmardown' documents.  
 License: MIT + file LICENSE
-URL: https://r2social.obi.obianom.com/
+URL: https://r2social.obi.obianom.com
 BugReports: https://github.com/oobianom/r2social/issues
 Depends: 
     R (>= 3.6)
