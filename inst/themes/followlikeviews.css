@@ -41,3 +41,33 @@
 .r2social-style2-btn-secondary .fa {
   margin-right: 5px;
 }
+
+
+
+
+
+
+
+.r2social-style3-like-container{filter: url('#filter');
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+.r2social-style3-like-cnt{
+  position: absolute;
+  cursor: pointer;
+  left: 50%;
+  top: 100%;
+  transform: translate(50%, -50%);     background: rgba(255,255,255,0.3);     width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 75px;
+  z-index: 10;
+}
+.r2social-style3-like-btn{
+  color: #fff;
+}
+
+

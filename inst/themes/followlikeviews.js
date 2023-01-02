@@ -20,3 +20,20 @@ $('.r2social-style2-review').on('click', function() {
     $(this).html('<i class="fa fa-heart" aria-hidden="true"></i> You liked it!');
   }
 });
+
+
+
+
+
+
+
+
+
+<div class="r2social-style3-like-container">
+  <div class="r2social-style3-like-cnt unchecked" id="r2social-style3-like-cnt">
+  <i class="r2social-style3-like-btn material-icons">thumb_up</i>
+</div>
+</div>
+
+
+
