@@ -2,11 +2,10 @@
 #'
 #' Customize and include like button in markdown and shiny apps
 #'
-#' @param link the link to share on social media
-#' @param image the image link to share on social media
+#'
 #' @param text the text to share on social media
-#' @param position of buttons e.g "left","right","bottom","inline"
 #' @param text.color text color e.g black
+#' @param count count of number of likes
 #'
 #' @section Examples for r2social:
 #' More examples and demo pages are located at this link -
@@ -16,20 +15,20 @@
 #'
 #' @examples
 #'
-#' likeButton(link = "http://rpkg.net", position = "left")
-#' likeButton(link = "http://obianom.com", position = "right")
-#' likeButton(link = "http://66pharm.com", position = "inline")
+#' likeButton()
 #'
 #' @export
 
-likeButton <- function(link,
-                        image = NULL,
-                        text = NULL,
-                        position = c("left", "right", "inline"),
-                        text.color = "black") {
+likeButton <- function(text = "Like",text.color = "black", count= TRUE) {
   # fetch selected position
   position <- match.arg(position)
 
   # fetch button by type
+  shiny::div(
+    class="r2social-style1-heart",
+    text
+  )
 
 }
+
+
