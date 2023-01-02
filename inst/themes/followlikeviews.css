@@ -14,3 +14,30 @@
  .r2social-style1-heart:hover {
 	 opacity: 0.8;
 }
+
+.r2social-style2-btn-secondary {
+  display: block;
+  text-align: center;
+  background: #FF2D55;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  padding: 10px 17px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.r2social-style2-btn-secondary:hover {
+  transform: translateY(-3px);
+}
+
+.r2social-style2-btn-secondary .fa {
+  margin-right: 5px;
+}
