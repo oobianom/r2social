@@ -81,7 +81,7 @@ $("#r2social-style3-like-cnt").click(function(){
 
 
 
-//STYLE 4
+//STYLE 4 - HTML will be transferred to a function soon
 
 <div class='middle-wrapper'>
   <div class='like-wrapper'>
