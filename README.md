@@ -33,11 +33,23 @@ Attach library
 library(shiny)
 library(r2social)
 
+
+#ex 1 - to share various links
 ui <- fluidPage(
   r2social.scripts(),
   shareButton(link = "https://rpkg.net", position = "left"),
   shareButton(link = "https://66pharm.com", position = "inline"),
   shareButton(link = "https://obianom.com", position = "right")
+)
+
+#ex 2 - to link your page to specific domain online
+ui <- fluidPage(
+  r2social.scripts(),
+  # to my personal website
+  connectButton(link = "https://obianom.com", position = "inline",link.out = FALSE, visit.us = TRUE),
+
+  # to my Twitter/X page
+  connectButton(link = "https://twitter.com/R2Rpkg", position = "inline",link.out = FALSE, twitter = TRUE)
 )
 
 
