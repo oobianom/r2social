@@ -8,6 +8,7 @@
 #' @param text text link for twitter only
 #' @param position position of buttons e.g "left","right","bottom","inline"
 #' @param text.color text color
+#' @param plain logical. with or without background
 #' @param facebook share on Facebook
 #' @param linkedin share on Linkedin
 #' @param twitter share on Twitter
@@ -33,8 +34,11 @@
 #' @return Social links button to be placed on pages
 #'
 #' @examples
+#' # styled
+#' socialButtons("https://shinyappstore.com/",facebook = TRUE)
 #'
-#' socialButtons("https://66pharm.com",facebook = TRUE)
+#' # plain
+#' socialButtons("https://shinyappstore.com/",plain=TRUE, linkedin = TRUE)
 #'
 #' @export
 
@@ -42,6 +46,7 @@ socialButtons <- function(link,
                           type = c("share", "connect"),
                           image = NULL,
                           text = NULL,
+                          plain = FALSE,
                           position = c("left", "right", "inline"),
                           text.color = "white",
                           facebook = FALSE,
@@ -102,7 +107,7 @@ socialButtons <- function(link,
           target = "_r2socialxlink",
           shiny::div(
             class = paste0("social-btn-", position),
-            style = paste0("background-color:", isc$color),
+            style = paste0("background-color:", ifelse(plain,'',isc$color)),
             shiny::div(
               class = paste0("r2social-icons-", position, " r2s-ico-", gsub("[^[:alnum:]]", "-", isc$name))
             ),

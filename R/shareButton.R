@@ -7,6 +7,7 @@
 #' @param text the text to share on social media
 #' @param position of buttons e.g "left","right","bottom","inline"
 #' @param text.color text color e.g black
+#' @param plain logical. with or without background
 #' @param facebook share on Facebook
 #' @param linkedin share on Linkedin
 #' @param twitter share on Twitter
@@ -31,7 +32,8 @@
 #'
 #' shareButton(link = "http://rpkg.net", position = "left")
 #' shareButton(link = "http://obianom.com", position = "right")
-#' shareButton(link = "http://66pharm.com", position = "inline")
+#' shareButton(link = "https://shinyappstore.com/", plain = TRUE, position = "inline") #plain styling
+#' shareButton(link = "https://shinyappstore.com/", plain = FALSE, position = "inline") #beautified
 #'
 #' @export
 
@@ -40,15 +42,16 @@ shareButton <- function(link,
                         text = NULL,
                         position = c("left", "right", "inline"),
                         text.color = "black",
+                        plain = FALSE,
                         facebook = TRUE,
                         linkedin = TRUE,
-                        twitter = TRUE,
+                        twitter = FALSE,
                         tumblr = FALSE,
                         pinterest = FALSE,
                         whatsapp = FALSE,
-                        reddit = TRUE,
+                        reddit = FALSE,
                         blogger = FALSE,
-                        weibo = TRUE,
+                        weibo = FALSE,
                         tiktok = FALSE,
                         vk = FALSE,
                         telegram = FALSE,
@@ -61,6 +64,7 @@ shareButton <- function(link,
     type = "share",
     image = image,
     text = text,
+    plain = plain,
     position = position,
     text.color = text.color,
     facebook = facebook,
