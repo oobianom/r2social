@@ -8,6 +8,7 @@
 #' @param position position of buttons e.g "left","right","bottom","inline"
 #' @param display.inline TRUE or FALSE if the button should be inline
 #' @param visit.us visit custom link
+#' @param plain logical. with or without background
 #' @param link.out visit custom link
 #' @param facebook link to an account on Facebook
 #' @param linkedin link to an account on Linkedin
@@ -43,6 +44,20 @@
 #' link = "//twitter.com/R2Rpkg",
 #' twitter = TRUE, position = "inline")
 #'
+#' # NOT styled
+#' connectButton(
+#' link = "//rpkg.net",
+#' visit.us = TRUE,
+#' position = "left")
+#' connectButton(
+#' link = "//www.linkedin.com/in/oobianom",
+#' linkedin = TRUE,
+#' plain = TRUE,
+#' position = "right")
+#' connectButton(
+#' link = "//twitter.com/R2Rpkg",
+#' twitter = TRUE, position = "inline")
+#'
 #' @export
 
 connectButton <- function(link,
@@ -51,6 +66,7 @@ connectButton <- function(link,
                           position = c("left", "right", "inline"),
                           display.inline = TRUE,
                           link.out = TRUE,
+                          plain = FALSE,
                           visit.us = FALSE,
                           facebook = FALSE,
                           linkedin = FALSE,
@@ -77,6 +93,7 @@ connectButton <- function(link,
       type = "connect",
       image = image,
       text = text,
+      plain = plain,
       position = position,
       text.color = "white",
       facebook = facebook,

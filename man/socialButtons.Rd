@@ -9,6 +9,7 @@ socialButtons(
   type = c("share", "connect"),
   image = NULL,
   text = NULL,
+  plain = FALSE,
   position = c("left", "right", "inline"),
   text.color = "white",
   facebook = FALSE,
@@ -38,6 +39,8 @@ socialButtons(
 \item{image}{image link for pinterest only}
 
 \item{text}{text link for twitter only}
+
+\item{plain}{logical. with or without background}
 
 \item{position}{position of buttons e.g "left","right","bottom","inline"}
 
@@ -90,7 +93,10 @@ More examples and demo pages are located at this link -
 }
 
 \examples{
+# styled
+socialButtons("https://shinyappstore.com/",facebook = TRUE)
 
-socialButtons("https://66pharm.com",facebook = TRUE)
+# plain
+socialButtons("https://shinyappstore.com/",plain=TRUE, linkedin = TRUE)
 
 }

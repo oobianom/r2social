@@ -10,15 +10,16 @@ shareButton(
   text = NULL,
   position = c("left", "right", "inline"),
   text.color = "black",
+  plain = FALSE,
   facebook = TRUE,
   linkedin = TRUE,
-  twitter = TRUE,
+  twitter = FALSE,
   tumblr = FALSE,
   pinterest = FALSE,
   whatsapp = FALSE,
-  reddit = TRUE,
+  reddit = FALSE,
   blogger = FALSE,
-  weibo = TRUE,
+  weibo = FALSE,
   tiktok = FALSE,
   vk = FALSE,
   telegram = FALSE,
@@ -35,6 +36,8 @@ shareButton(
 \item{position}{of buttons e.g "left","right","bottom","inline"}
 
 \item{text.color}{text color e.g black}
+
+\item{plain}{logical. with or without background}
 
 \item{facebook}{share on Facebook}
 
@@ -78,6 +81,7 @@ More examples and demo pages are located at this link -
 
 shareButton(link = "http://rpkg.net", position = "left")
 shareButton(link = "http://obianom.com", position = "right")
-shareButton(link = "http://66pharm.com", position = "inline")
+shareButton(link = "https://shinyappstore.com/", plain = TRUE, position = "inline") #plain styling
+shareButton(link = "https://shinyappstore.com/", plain = FALSE, position = "inline") #beautified
 
 }

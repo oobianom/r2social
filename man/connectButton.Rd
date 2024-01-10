@@ -11,6 +11,7 @@ connectButton(
   position = c("left", "right", "inline"),
   display.inline = TRUE,
   link.out = TRUE,
+  plain = FALSE,
   visit.us = FALSE,
   facebook = FALSE,
   linkedin = FALSE,
@@ -40,6 +41,8 @@ connectButton(
 \item{display.inline}{TRUE or FALSE if the button should be inline}
 
 \item{link.out}{visit custom link}
+
+\item{plain}{logical. with or without background}
 
 \item{visit.us}{visit custom link}
 
@@ -91,6 +94,20 @@ position = "left")
 connectButton(
 link = "//www.linkedin.com/in/oobianom",
 linkedin = TRUE,
+position = "right")
+connectButton(
+link = "//twitter.com/R2Rpkg",
+twitter = TRUE, position = "inline")
+
+# NOT styled
+connectButton(
+link = "//rpkg.net",
+visit.us = TRUE,
+position = "left")
+connectButton(
+link = "//www.linkedin.com/in/oobianom",
+linkedin = TRUE,
+plain = TRUE,
 position = "right")
 connectButton(
 link = "//twitter.com/R2Rpkg",
