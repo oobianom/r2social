@@ -11,11 +11,12 @@ connectButton(
   position = c("left", "right", "inline"),
   display.inline = TRUE,
   link.out = TRUE,
+  bg.col = NULL,
   plain = FALSE,
   visit.us = FALSE,
   facebook = FALSE,
   linkedin = FALSE,
-  twitter = FALSE,
+  x = FALSE,
   tumblr = FALSE,
   pinterest = FALSE,
   whatsapp = FALSE,
@@ -34,13 +35,15 @@ connectButton(
 
 \item{image}{image link only for pinterest}
 
-\item{text}{text link for twitter}
+\item{text}{text link for X}
 
 \item{position}{position of buttons e.g "left","right","bottom","inline"}
 
 \item{display.inline}{TRUE or FALSE if the button should be inline}
 
 \item{link.out}{visit custom link}
+
+\item{bg.col}{background color for the icons.}
 
 \item{plain}{logical. with or without background}
 
@@ -50,7 +53,7 @@ connectButton(
 
 \item{linkedin}{link to an account on Linkedin}
 
-\item{twitter}{link to an account on Twitter}
+\item{x}{link to an account on X}
 
 \item{tumblr}{link to an account on Tumblr}
 
@@ -80,6 +83,9 @@ Connect with me/us button via social links
 \description{
 Buttons for others to connect socially to you
 }
+\note{
+'bg.col' argument is only functional if 'plain' argument is set to false
+}
 \section{Examples for r2social}{
 
 More examples and demo pages are located at this link -
@@ -96,8 +102,8 @@ link = "//www.linkedin.com/in/oobianom",
 linkedin = TRUE,
 position = "right")
 connectButton(
-link = "//twitter.com/R2Rpkg",
-twitter = TRUE, position = "inline")
+link = "//x.com/R2Rpkg",
+x = TRUE, position = "inline")
 
 # NOT styled
 connectButton(
@@ -110,7 +116,7 @@ linkedin = TRUE,
 plain = TRUE,
 position = "right")
 connectButton(
-link = "//twitter.com/R2Rpkg",
-twitter = TRUE, position = "inline")
+link = "//x.com/R2Rpkg",
+x = TRUE, position = "inline")
 
 }
