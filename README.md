@@ -15,7 +15,7 @@
 
 ![](https://r2social.obi.obianom.com/r2social2.gif)
 
-### Installation and Library Attachment
+## Installation and Library Attachment
 
 The r2social package is available on CRAN and can be installed as shown below
 
@@ -23,16 +23,86 @@ The r2social package is available on CRAN and can be installed as shown below
 
 Attach library 
 
-`library(r2social)`
-
-
-### Shiny application
-
 ```{r}
 
 library(shiny)
 library(r2social)
 
+```
+
+## Feature 2: Profile card with social links
+
+### Shiny application
+
+```{r}
+ui <- fluidPage(
+
+profileDisplay1(list(
+  a = list(
+    name = "Obi Obianom",
+    title = "Senior Scientist",
+    image = "https://r2social.obi.obianom.com/misc/team3.jpg",
+    social = list(
+      list(name = "x",
+           link = "https://x.com/R2Rpkg"),
+      list(name = "linkedin",
+           link = "https://linkedin.com/oobianom"),
+      list(name = "website",
+           link = "https://obianom.com"),
+      list(name = "youtube",
+           link = "https://youtube.com/R2Rpkg")
+    )
+  ),
+  b = list(
+    name = "William Hane",
+    title = "Core Developer",
+    image = "https://r2social.obi.obianom.com/misc/team1.jpg",
+    social = list(list(name = "youtube",
+                       link = "https://youtube.com/R2Rpkg"))
+  )
+))
+
+
+)
+
+```
+
+### Rmarkdown application
+
+```{r}
+
+profileDisplay1(list(
+  a = list(
+    name = "Obi Obianom",
+    title = "Senior Scientist",
+    image = "https://r2social.obi.obianom.com/misc/team2.jpg",
+    social = list(
+      list(name = "x",
+           link = "https://x.com/R2Rpkg"),
+      list(name = "linkedin",
+           link = "https://linkedin.com/oobianom"),
+      list(name = "website",
+           link = "https://obianom.com"),
+      list(name = "youtube",
+           link = "https://youtube.com/R2Rpkg")
+    )
+  ),
+  b = list(
+    name = "William Hane",
+    title = "Core Developer",
+    image = "https://r2social.obi.obianom.com/misc/team4.jpg",
+    social = list(list(name = "youtube",
+                       link = "https://youtube.com/R2Rpkg"))
+  )
+))
+
+```
+
+## Feature 1: Add social links on the sides
+
+### Shiny application
+
+```{r}
 
 #ex 1 - to share various links
 ui <- fluidPage(
@@ -50,7 +120,7 @@ ui <- fluidPage(
   connectButton(link = "https://obianom.com", position = "inline",link.out = FALSE, visit.us = TRUE),
 
   # to my Twitter/X page
-  connectButton(link = "https://twitter.com/R2Rpkg", position = "inline",link.out = FALSE, twitter = TRUE)
+  connectButton(link = "https://x.com/R2Rpkg", position = "inline",link.out = FALSE, x = TRUE)
 )
 
 
@@ -66,6 +136,8 @@ r2social.scripts()
 shareButton(link = "https://rpkg.net", position = "left")
 shareButton(link = "https://shinyappstore.com", position = "inline")
 shareButton(link = "https://obianom.com", position = "right")
+
+
 
 
 
