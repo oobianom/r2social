@@ -15,8 +15,8 @@
 #    #include customized connect buttons where you specify direct links
 #    connectButton(link = "http://rpkg.net", visit.us=TRUE, position = "inline"),
 #    connectButton(link = "https://www.linkedin.com/in/oobianom", linkedin=TRUE, position = "inline"),
-#    connectButton(link = "https://twitter.com/R2Rpkg", twitter=TRUE, position = "inline",display.inline = FALSE),
-#    connectButton(link = "https://twitter.com/R2Rpkg", twitter=TRUE, position = "inline",display.inline = FALSE)
+#    connectButton(link = "https://x.com/R2Rpkg", x=TRUE, plain = T, position = "inline",display.inline = FALSE),
+#    connectButton(link = "https://x.com/R2Rpkg", x=TRUE, position = "inline",display.inline = FALSE)
 #  )
 #  
 #  
@@ -30,13 +30,13 @@
 #  # include share buttons
 #  shareButton(link = "http://rpkg.net", position = "left")
 #  shareButton(link = "http://obianom.com", position = "right")
-#  shareButton(link = "http://66pharm.com", position = "inline")
+#  shareButton(link = "https://shinyappstore.com/", position = "inline")
 #  
 #  # include customized connect buttons where you specify direct links
 #  connectButton(link = "http://rpkg.net", visit.us = TRUE, position = "inline")
 #  connectButton(link = "https://www.linkedin.com/in/oobianom", linkedin = TRUE, position = "inline")
-#  connectButton(link = "https://twitter.com/R2Rpkg", twitter = TRUE, position = "inline", display.inline = FALSE)
-#  connectButton(link = "https://twitter.com/R2Rpkg", twitter = TRUE, position = "inline", display.inline = FALSE)
+#  connectButton(link = "https://x.com/R2Rpkg", x = TRUE, plain = T, position = "inline", display.inline = FALSE)
+#  connectButton(link = "https://x.com/R2Rpkg", x = TRUE, position = "inline", display.inline = FALSE)
 #  
 #  
 #  
