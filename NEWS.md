@@ -3,7 +3,7 @@
 Features
 
   + Add plain feature
-  - Twitter logo change pending
+  - X/Twitter logo change pending
   
 # r2social 1.0
 
