@@ -1,20 +1,55 @@
 ---
-title: "r2social R package example: Add social share and connect buttons on all your Rmarkdown documents and Shiny applications"
+title: "r2social R package new version with profile card"
 output:
   html_document:
     theme: default
 ---
 
-
-
-#### Example
-
-```{r, results='asis'}
+```{r}
 library(r2social)
 r2social.scripts()
-shareButton(link = "http://rpkg.net", position = "left")
-shareButton(link = "http://obianom.com", position = "right")
-shareButton(link = "http://66pharm.com", position = "inline")
+
+
+```
+
+
+#### Feature: Profile card with social links
+
+```{r}
+profileDisplay1(list(
+  a = list(
+    name = "Obi Obianom",
+    title = "Senior Scientist",
+    image = "https://r2social.obi.obianom.com/misc/team3.jpg",
+    social = list(
+      list(name = "x",
+           link = "https://x.com/R2Rpkg"),
+      list(name = "linkedin",
+           link = "https://linkedin.com/oobianom"),
+      list(name = "website",
+           link = "https://obianom.com"),
+      list(name = "youtube",
+           link = "https://youtube.com/R2Rpkg")
+    )
+  ),
+  b = list(
+    name = "William Hane",
+    title = "Core Developer",
+    image = "https://r2social.obi.obianom.com/misc/team1.jpg",
+    social = list(list(name = "youtube",
+                       link = "https://youtube.com/R2Rpkg"))
+  )
+))
+
+```
+#### Feauture: Social links alon
+
+```{r, results='asis'}
+
+shareButton(link = "http://rpkg.net", position = "left", weibo = TRUE, x = TRUE)
+shareButton(link = "http://obianom.com", plain = TRUE, position = "right")
+shareButton(link = "http://shinyappstore.com", plain = TRUE, position = "inline")
+
 ```
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet sit amet cursus sit amet dictum sit. In pellentesque massa placerat duis ultricies lacus sed.
@@ -29,7 +64,7 @@ connectButton(link = "https://weibo.com/R2Rpkg", weibo = TRUE, position = "inlin
 Tristique senectus et netus et malesuada fames. Suspendisse ultrices gravida dictum fusce ut placerat orci nulla. In vitae turpis massa sed elementum tempus egestas sed. Feugiat in ante metus dictum at tempor commodo ullamcorper a.
 
 ```{r, results='asis'}
-connectButton(link = "https://twitter.com/R2Rpkg", twitter = TRUE, position = "inline", display.inline = FALSE)
+connectButton(link = "https://x.com/R2Rpkg", x = TRUE, position = "inline", display.inline = FALSE)
 connectButton(link = "https://reddit.com/R2Rpkg", reddit = TRUE, position = "inline", display.inline = FALSE)
 ```
 
