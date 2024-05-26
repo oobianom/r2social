@@ -4,7 +4,7 @@
 #'
 #' @param link the direct link to connect to
 #' @param image image link only for pinterest
-#' @param text text link for twitter
+#' @param text text link for X
 #' @param position position of buttons e.g "left","right","bottom","inline"
 #' @param display.inline TRUE or FALSE if the button should be inline
 #' @param visit.us visit custom link
@@ -12,7 +12,7 @@
 #' @param link.out visit custom link
 #' @param facebook link to an account on Facebook
 #' @param linkedin link to an account on Linkedin
-#' @param twitter link to an account on Twitter
+#' @param x link to an account on X
 #' @param tumblr link to an account on Tumblr
 #' @param pinterest link to an account on Pinterest
 #' @param instagram link to an account on Instagram
@@ -24,6 +24,10 @@
 #' @param vk link to an account on VK or VKontakte
 #' @param telegram link to an account on Telegram
 #' @param youtube link to an account on Youtube
+#' @param bg.col background color for the icons.
+#'
+#' @note
+#' 'bg.col' argument is only functional if 'plain' argument is set to false
 #'
 #' @section Examples for r2social:
 #' More examples and demo pages are located at this link -
@@ -41,8 +45,8 @@
 #' linkedin = TRUE,
 #' position = "right")
 #' connectButton(
-#' link = "//twitter.com/R2Rpkg",
-#' twitter = TRUE, position = "inline")
+#' link = "//x.com/R2Rpkg",
+#' x = TRUE, position = "inline")
 #'
 #' # NOT styled
 #' connectButton(
@@ -55,8 +59,8 @@
 #' plain = TRUE,
 #' position = "right")
 #' connectButton(
-#' link = "//twitter.com/R2Rpkg",
-#' twitter = TRUE, position = "inline")
+#' link = "//x.com/R2Rpkg",
+#' x = TRUE, position = "inline")
 #'
 #' @export
 
@@ -66,11 +70,12 @@ connectButton <- function(link,
                           position = c("left", "right", "inline"),
                           display.inline = TRUE,
                           link.out = TRUE,
+                          bg.col = NULL,
                           plain = FALSE,
                           visit.us = FALSE,
                           facebook = FALSE,
                           linkedin = FALSE,
-                          twitter = FALSE,
+                          x = FALSE,
                           tumblr = FALSE,
                           pinterest = FALSE,
                           whatsapp = FALSE,
@@ -98,7 +103,8 @@ connectButton <- function(link,
       text.color = "white",
       facebook = facebook,
       linkedin = linkedin,
-      twitter = twitter,
+      bg.col = bg.col,
+      x = x,
       tumblr = tumblr,
       pinterest = pinterest,
       whatsapp = whatsapp,
