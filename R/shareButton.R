@@ -10,7 +10,7 @@
 #' @param plain logical. with or without background
 #' @param facebook share on Facebook
 #' @param linkedin share on Linkedin
-#' @param twitter share on Twitter
+#' @param x share on Twitter
 #' @param tumblr share on Tumblr
 #' @param pinterest share on Pinterest
 #' @param whatsapp share on Whatsapp
@@ -21,6 +21,10 @@
 #' @param vk share on VK or VKontakte
 #' @param telegram share on Telegram
 #' @param visit.us share on custom link
+#' @param bg.col background color for the icons.
+#'
+#' @note
+#' 'bg.col' argument is only functional if 'plain' argument is set to false
 #'
 #' @section Examples for r2social:
 #' More examples and demo pages are located at this link -
@@ -45,7 +49,8 @@ shareButton <- function(link,
                         plain = FALSE,
                         facebook = TRUE,
                         linkedin = TRUE,
-                        twitter = FALSE,
+                        bg.col = NULL,
+                        x = FALSE,
                         tumblr = FALSE,
                         pinterest = FALSE,
                         whatsapp = FALSE,
@@ -65,11 +70,12 @@ shareButton <- function(link,
     image = image,
     text = text,
     plain = plain,
+    bg.col = bg.col,
     position = position,
     text.color = text.color,
     facebook = facebook,
     linkedin = linkedin,
-    twitter = twitter,
+    x = x,
     tumblr = tumblr,
     pinterest = pinterest,
     whatsapp = whatsapp,
