@@ -5,13 +5,13 @@
 #' @param link link address to share
 #' @param type type of social button e.g. share or connect
 #' @param image image link for pinterest only
-#' @param text text link for twitter only
+#' @param text text link for x only
 #' @param position position of buttons e.g "left","right","bottom","inline"
 #' @param text.color text color
 #' @param plain logical. with or without background
 #' @param facebook share on Facebook
 #' @param linkedin share on Linkedin
-#' @param twitter share on Twitter
+#' @param x share on Twitter
 #' @param tumblr share on Tumblr
 #' @param pinterest share on Pinterest
 #' @param instagram share on Instagram
@@ -26,6 +26,10 @@
 #' @param telegram share on Telegram
 #' @param visit.us visit a direct link
 #' @param link.out hyperlink to a page
+#' @param bg.col background color for the icons.
+#'
+#' @note
+#' 'bg.col' argument is only functional if 'plain' argument is set to false
 #'
 #' @section Examples for r2social:
 #' More examples and demo pages are located at this link -
@@ -49,9 +53,10 @@ socialButtons <- function(link,
                           plain = FALSE,
                           position = c("left", "right", "inline"),
                           text.color = "white",
+                          bg.col = NULL,
                           facebook = FALSE,
                           linkedin = FALSE,
-                          twitter = FALSE,
+                          x = FALSE,
                           tumblr = FALSE,
                           pinterest = FALSE,
                           whatsapp = FALSE,
@@ -80,7 +85,7 @@ socialButtons <- function(link,
   soc.each <- list(
     list(name = "facebook", color = "#1877f2", show = facebook, link = paste0(url.prefix, "www.facebook.com/sharer/sharer.php?u=", link)),
     list(name = "linkedin", color = "#0A66C2", show = linkedin, link = paste0(url.prefix, "www.linkedin.com/shareArticle?mini=true&url=", link)),
-    list(name = "twitter", color = "#1DA1F2", show = twitter, link = paste0(url.prefix, "twitter.com/intent/tweet?url=", link, "&text=", utils::URLencode(text))),
+    list(name = "x", color = "#1DA1F2", show = x, link = paste0(url.prefix, "x.com/intent/tweet?url=", link, "&text=", utils::URLencode(text))),
     list(name = "tumblr", color = "#529ECC", show = tumblr, link = paste0(url.prefix, "www.tumblr.com/share?v=3&u=", link, "&t=", utils::URLencode(text))),
     list(name = "pinterest", color = "#E60023", show = pinterest, link = paste0(url.prefix, "pinterest.com/pin/create/button/?url=", utils::URLencode(text), "&media=", ifelse(is.null(image), "", utils::URLencode(image)), "&description=", utils::URLencode(text))),
     list(name = "whatsapp", color = "#24cc63", show = whatsapp, link = paste0(url.prefix, "web.whatsapp.com/send?text=", utils::URLencode(text), " ", link)),
@@ -101,13 +106,15 @@ socialButtons <- function(link,
 
     # add social icons
     lapply(soc.each, function(isc) {
+      col1 <- isc$color
+      if(quickcode::not.null(bg.col)) col1 <- bg.col
       if (isc$show) {
         shiny::tags$a(
           href = ifelse(type == "share", isc$link, link),
           target = "_r2socialxlink",
           shiny::div(
             class = paste0("social-btn-", position),
-            style = paste0("background-color:", ifelse(plain,'',isc$color)),
+            style = paste0("background-color:", ifelse(plain,'',col1)),
             shiny::div(
               class = paste0("r2social-icons-", position, " r2s-ico-", gsub("[^[:alnum:]]", "-", isc$name))
             ),
