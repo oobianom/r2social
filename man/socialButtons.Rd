@@ -12,9 +12,10 @@ socialButtons(
   plain = FALSE,
   position = c("left", "right", "inline"),
   text.color = "white",
+  bg.col = NULL,
   facebook = FALSE,
   linkedin = FALSE,
-  twitter = FALSE,
+  x = FALSE,
   tumblr = FALSE,
   pinterest = FALSE,
   whatsapp = FALSE,
@@ -38,7 +39,7 @@ socialButtons(
 
 \item{image}{image link for pinterest only}
 
-\item{text}{text link for twitter only}
+\item{text}{text link for x only}
 
 \item{plain}{logical. with or without background}
 
@@ -46,11 +47,13 @@ socialButtons(
 
 \item{text.color}{text color}
 
+\item{bg.col}{background color for the icons.}
+
 \item{facebook}{share on Facebook}
 
 \item{linkedin}{share on Linkedin}
 
-\item{twitter}{share on Twitter}
+\item{x}{share on Twitter}
 
 \item{tumblr}{share on Tumblr}
 
@@ -85,6 +88,9 @@ Social links button to be placed on pages
 }
 \description{
 For use in making buttons to share a page or connect to your social media
+}
+\note{
+'bg.col' argument is only functional if 'plain' argument is set to false
 }
 \section{Examples for r2social}{
 
