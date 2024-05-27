@@ -2,6 +2,7 @@
 
 export(connectButton)
 export(profileDisplay1)
+export(profileDisplay2)
 export(r2social.scripts)
 export(shareButton)
 export(socialButtons)
