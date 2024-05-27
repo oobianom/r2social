@@ -1,10 +1,10 @@
 ---
-title: "Here is the r2social R package: Inclusion of social sharing and connect buttons on a shiny app or rmarkdown"
-author: "Obinna N. Obianom"
+title: "r2social R package: Seamlessly include social sharing and connect buttons on a shiny app or rmarkdown"
+author: "Obinna N. Obianom (pseudonym: William Hane)"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Here is the r2social R package: Inclusion of social sharing and connect buttons on a shiny app or rmarkdown}
+  %\VignetteIndexEntry{r2social R package: Seamlessly include social sharing and connect buttons on a shiny app or rmarkdown}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -14,11 +14,13 @@ vignette: >
 
 Constitutes the following features:
   
-      - [x] Share link buttons
+  - [x] profile cards with links
       
-      - [x] Connect buttons
+  - [x] Share link buttons alone
       
-      - [x] Hyperlink buttons
+  - [x] Connect buttons alone
+      
+  - [x] Hyperlink buttons alone
 
 ![](https://r2social.obi.obianom.com/r2social2.gif)
 
@@ -37,56 +39,116 @@ Attach library
 The r2social can be used within the R Markdown document or in Shiny applications as shown below
 
 
-#### Include the scripts and stylesheets
+#### Include the scripts and stylesheets for Rmarkdown
 
 `r2social.scripts()`
 
-#### Use in Shiny Application
+## Feature 2: Profile card with social links
 
-```{r eval=FALSE}
+### Shiny application
 
-library(shiny)
-library(r2social)
-
+```
 ui <- fluidPage(
-  
+
+profileDisplay1(list(
+  a = list(
+    name = "Obi Obianom",
+    title = "Senior Scientist",
+    image = "https://r2social.obi.obianom.com/misc/team3.jpg",
+    social = list(
+      list(name = "x",
+           link = "https://x.com/R2Rpkg"),
+      list(name = "linkedin",
+           link = "https://linkedin.com/oobianom"),
+      list(name = "website",
+           link = "https://obianom.com"),
+      list(name = "youtube",
+           link = "https://youtube.com/R2Rpkg")
+    )
+  ),
+  b = list(
+    name = "William Hane",
+    title = "Core Developer",
+    image = "https://r2social.obi.obianom.com/misc/team1.jpg",
+    social = list(list(name = "youtube",
+                       link = "https://youtube.com/R2Rpkg"))
+  )
+))
+
+
+)
+
+```
+
+### Rmarkdown application
+
+```
+
+profileDisplay1(list(
+  a = list(
+    name = "Obi Obianom",
+    title = "Senior Scientist",
+    image = "https://r2social.obi.obianom.com/misc/team2.jpg",
+    social = list(
+      list(name = "x",
+           link = "https://x.com/R2Rpkg"),
+      list(name = "linkedin",
+           link = "https://linkedin.com/oobianom"),
+      list(name = "website",
+           link = "https://obianom.com"),
+      list(name = "youtube",
+           link = "https://youtube.com/R2Rpkg")
+    )
+  ),
+  b = list(
+    name = "William Hane",
+    title = "Core Developer",
+    image = "https://r2social.obi.obianom.com/misc/team4.jpg",
+    social = list(list(name = "youtube",
+                       link = "https://youtube.com/R2Rpkg"))
+  )
+))
+
+```
+
+## Feature 1: Add social links on the sides
+
+### Shiny application
+
+```
+
+#ex 1 - to share various links
+ui <- fluidPage(
   r2social.scripts(),
-  
-  #include share buttons
-  shareButton(link = "http://rpkg.net", position = "left"),
-  shareButton(link = "http://obianom.com", position = "right"),
-  shareButton(link = "http://google.com", position = "inline"),
-  
-  #include customized connect buttons where you specify direct links
-  connectButton(link = "http://rpkg.net", visit.us=TRUE, position = "inline"),
-  connectButton(link = "https://www.linkedin.com/in/oobianom", linkedin=TRUE, position = "inline"),
-  connectButton(link = "https://x.com/R2Rpkg", x=TRUE, plain = T, position = "inline",display.inline = FALSE),
-  connectButton(link = "https://x.com/R2Rpkg", x=TRUE, position = "inline",display.inline = FALSE)
+  shareButton(link = "https://rpkg.net", position = "left"),
+  shareButton(link = "https://shinyappstore.com", position = "inline"),
+  shareButton(link = "https://shinyappstore.com", plain = T, position = "inline"), #plain style
+  shareButton(link = "https://obianom.com", position = "right")
+)
+
+#ex 2 - to link your page to specific domain online
+ui <- fluidPage(
+  r2social.scripts(),
+  # to my personal website
+  connectButton(link = "https://obianom.com", position = "inline",link.out = FALSE, visit.us = TRUE),
+
+  # to my Twitter/X page
+  connectButton(link = "https://x.com/R2Rpkg", position = "inline",link.out = FALSE, x = TRUE)
 )
 
 
 ```
 
-#### Use in Rmarkdown documents
+### Rmarkdown document
 
-```{r eval=FALSE}
+```
 
 library(r2social)
 
 r2social.scripts()
-
-# include share buttons
-shareButton(link = "http://rpkg.net", position = "left")
-shareButton(link = "http://obianom.com", position = "right")
-shareButton(link = "https://shinyappstore.com/", position = "inline")
-
-# include customized connect buttons where you specify direct links
-connectButton(link = "http://rpkg.net", visit.us = TRUE, position = "inline")
-connectButton(link = "https://www.linkedin.com/in/oobianom", linkedin = TRUE, position = "inline")
-connectButton(link = "https://x.com/R2Rpkg", x = TRUE, plain = T, position = "inline", display.inline = FALSE)
-connectButton(link = "https://x.com/R2Rpkg", x = TRUE, position = "inline", display.inline = FALSE)
-
-
+shareButton(link = "https://rpkg.net", position = "left")
+shareButton(link = "https://shinyappstore.com", position = "inline")
+shareButton(link = "https://obianom.com", position = "right")
 
 ```
 
