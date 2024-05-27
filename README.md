@@ -19,8 +19,19 @@
 
 
 
+# Features
+
+## Social links v1
 
 ![](https://r2social.obi.obianom.com/r2social2.gif)
+
+## Profile card v1
+
+![](https://r2social.obi.obianom.com/misc/feature1.gif)
+
+## Profile card v2
+
+![](https://r2social.obi.obianom.com/feature2.gif)
 
 ## Installation and Library Attachment
 
