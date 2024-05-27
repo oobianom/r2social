@@ -11,7 +11,6 @@
 #'   list(
 #'     a = list(
 #'       name = "Obi Obianom",
-#'       title = "Senior Scientist",
 #'       image = "https://r2social.obi.obianom.com/misc/team3.jpg",
 #'       social = list(
 #'         list(
@@ -73,9 +72,10 @@ profileDisplay2 <- function(item) {
           tt1$div(
             class = "r2social-x75q-border",
             tt1$h2(
-              e$name
-            ),tt1$span(
+              e$name,tt1$small(
+                style="display:block; color:var(--keydefault-color)",
               e$title
+            )
             ),
             tt1$div(
               class = "r2social-x75q-icons",
