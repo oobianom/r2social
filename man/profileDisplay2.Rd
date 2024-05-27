@@ -18,36 +18,48 @@ Social profile card for a any profile
 \examples{
 
 profileDisplay2(
-list(
-a = list(
-  name = "Obi Obianom",
-  title = "Senior Scientist",
-  image = "https://r2social.obi.obianom.com/misc/team3.jpg",
-  social = list(
-    list(name = "x",
-         link = "https://x.com/R2Rpkg"),
-    list(name = "linkedin",
-         link = "https://linkedin.com/oobianom"),
-    list(name = "website",
-         link = "https://obianom.com"),
-    list(name = "youtube",
-         link = "https://youtube.com/R2Rpkg")
+  list(
+    a = list(
+      name = "Obi Obianom",
+      image = "https://r2social.obi.obianom.com/misc/team3.jpg",
+      social = list(
+        list(
+          name = "x",
+          link = "https://x.com/R2Rpkg"
+        ),
+        list(
+          name = "linkedin",
+          link = "https://linkedin.com/oobianom"
+        ),
+        list(
+          name = "website",
+          link = "https://obianom.com"
+        ),
+        list(
+          name = "youtube",
+          link = "https://youtube.com/R2Rpkg"
+        )
+      )
+    ),
+    b = list(
+      name = "William Hane",
+      title = "Core Developer",
+      image = "https://r2social.obi.obianom.com/misc/team1.jpg",
+      social = list(list(
+        name = "youtube",
+        link = "https://youtube.com/R2Rpkg"
+      ))
+    ),
+    c = list(
+      name = "Maximillian Qian",
+      title = "Code Cleaner",
+      image = "https://r2social.obi.obianom.com/misc/team2.jpg",
+      social = list(list(
+        name = "facebook",
+        link = "https://facebook.com/R2Rpkg"
+      ))
+    )
   )
-),
-b = list(
-  name = "William Hane",
-  title = "Core Developer",
-  image = "https://r2social.obi.obianom.com/misc/team1.jpg",
-  social = list(list(name = "youtube",
-                     link = "https://youtube.com/R2Rpkg"))
-),
-c = list(
-  name = "Maximillian Qian",
-  title = "Code Cleaner",
-  image = "https://r2social.obi.obianom.com/misc/team2.jpg",
-  social = list(list(name = "facebook",
-                     link = "https://facebook.com/R2Rpkg"))
 )
-))
 
 }
