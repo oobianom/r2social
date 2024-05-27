@@ -1,3 +1,12 @@
+# r2social 1.2
+
+Features
+
+  + 2 Elegant profile cards features
+ 
+      + profileDisplay1()
+      + profileDisplay2()
+    
 # r2social 1.1
 
 Features
