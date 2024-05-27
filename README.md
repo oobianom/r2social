@@ -31,7 +31,7 @@
 
 ## Profile card v2
 
-![](https://r2social.obi.obianom.com/feature2.gif)
+![](https://r2social.obi.obianom.com/feature2.gif) 
 
 ## Installation and Library Attachment
 
