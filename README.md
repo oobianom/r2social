@@ -2,6 +2,13 @@
 
 ### Official site: https://r2social.obi.obianom.com
 
+### NEW FEATURES ADDED!!!
+
+ - 2 Elegant profile cards features
+ 
+    - profileDisplay1()
+    - profileDisplay2()
+
 ##### View a live demo: [r2social demo](https://rstudio-pubs-static.s3.amazonaws.com/979733_c818519050184128a6a74a27b8c84156.html)
 
 ##### The goal of this new R package is to provide functions that allow the inclusion of share and connect buttons on any page. This has been tested in Rmarkdown documents as well as on simply Shiny applications. See the examples folder of this package.
