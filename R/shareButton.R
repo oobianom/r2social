@@ -33,7 +33,8 @@
 #' @return Share link button via social media platforms
 #'
 #' @examples
-#'
+#' # Basic examples
+#' # Let's make r2 social great again!
 #' shareButton(link = "http://rpkg.net", position = "left")
 #' shareButton(link = "http://obianom.com", position = "right")
 #' shareButton(link = "https://shinyappstore.com/", plain = TRUE, position = "inline") #plain styling
