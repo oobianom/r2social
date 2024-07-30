@@ -1,3 +1,7 @@
+# r2social 1.2.1
+
+ - fiz dependency
+ 
 # r2social 1.2
 
 Features
