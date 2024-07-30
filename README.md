@@ -1,4 +1,8 @@
-# r2social R package: include social links and connect buttons in Rmarkdown and shiny applications
+# r2social v1.2.1 is already here!
+
+Let's make r2 social great again!
+
+## r2social R package: include social links and connect buttons in Rmarkdown and shiny applications
 
 ### Official site: https://r2social.obi.obianom.com
 
